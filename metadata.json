@@ -1,0 +1,6 @@
+{
+  "name": "Ilwana Community Heritage",
+  "description": "Preserving the History, Language, Culture, and Heritage of the Wailwana.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
