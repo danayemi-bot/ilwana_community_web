@@ -13,17 +13,17 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Identity & Core Mission */}
           <div className="md:col-span-2 space-y-4">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-4">
               <img
                 src="/assets/aistudio/image_ae57196b.png"
                 alt="Ilwana Community Heritage Logo"
-                className="w-10 h-10 rounded-full object-cover border border-stone-700 shadow-xs shrink-0"
+                className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-amber-500/80 shadow-md shrink-0 bg-white ring-2 ring-teal-500/30"
               />
-              <h3 className="font-serif text-xl font-bold text-white tracking-tight">
+              <h3 className="font-serif text-2xl font-bold text-white tracking-tight">
                 Ilwana Community Heritage
               </h3>
             </div>
-            <p className="text-sm text-stone-400 max-w-md leading-relaxed">
+            <p className="text-sm sm:text-base text-stone-200 max-w-md leading-relaxed">
               Preserving the History, Language, Culture, and Heritage of the Wailwana. Dedicated to documenting indigenous knowledge, the Kilwana language, and community governance along the River Tana for present and future generations.
             </p>
             <div className="pt-2 flex flex-wrap gap-4 text-xs text-stone-400">

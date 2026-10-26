@@ -11,53 +11,53 @@ export const GovernancePage: React.FC<GovernancePageProps> = ({ onNavigate }) =>
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
       {/* Header */}
-      <div className="space-y-4 border-b border-stone-200 pb-8">
-        <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#0f4c5c]">
+      <div className="space-y-4 border-b-2 border-stone-300 pb-8">
+        <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#0f4c5c]">
           <Shield className="w-4 h-4" />
           <span>Section 07 · Political & Customary Institutions</span>
         </div>
-        <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-stone-900">
+        <h1 className="font-serif text-3xl sm:text-5xl font-black tracking-tight text-stone-950">
           Traditional Governance, the Hayu & the Gasa
         </h1>
-        <p className="text-base sm:text-lg text-stone-600 leading-relaxed max-w-3xl">
+        <p className="text-base sm:text-xl text-stone-950 leading-relaxed max-w-3xl font-normal">
           Long predating modern administrative systems, the Ilwana Community instituted an enduring governance model centered on consultative consensus, moral integrity, restorative justice, and clan representation.
         </p>
       </div>
 
       {/* The Institution of the Hayu */}
-      <section className="bg-white p-6 sm:p-10 rounded-2xl border border-stone-200 shadow-xs space-y-6">
+      <section className="bg-white p-6 sm:p-10 rounded-2xl border-2 border-stone-300 shadow-xs space-y-6">
         <div className="flex items-center gap-3 text-[#9a3412]">
-          <Crown className="w-7 h-7" />
+          <Crown className="w-8 h-8" />
           <div>
-            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-stone-400">
+            <span className="text-xs sm:text-sm font-mono font-bold uppercase tracking-wider text-amber-800">
               TRADITIONAL MONARCH & CULTURAL LEADER
             </span>
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900">
+            <h2 className="font-serif text-2xl sm:text-3xl font-black text-stone-950">
               The Hayu (Traditional King)
             </h2>
           </div>
         </div>
 
-        <div className="prose max-w-none text-stone-700 leading-relaxed space-y-4 text-base">
+        <div className="prose max-w-none text-stone-950 leading-relaxed space-y-4 text-base sm:text-lg">
           <p>
-            The <strong>Hayu</strong> is the traditional king and supreme cultural leader of the Ilwana Community. The institution represents the continuity, unity, and dignity of the Wailwana.
+            The <strong className="text-stone-950 font-extrabold">Hayu</strong> is the traditional king and supreme cultural leader of the Ilwana Community. The institution represents the continuity, unity, and dignity of the Wailwana.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-            <div className="p-4 bg-stone-50 rounded-xl border border-stone-200 text-xs space-y-1.5">
-              <span className="font-semibold text-stone-900">Leadership by Character</span>
-              <p className="text-stone-600">
+            <div className="p-5 bg-[#fdfbf7] rounded-xl border-2 border-stone-300 text-sm sm:text-base space-y-2">
+              <span className="font-extrabold text-stone-950 text-base">Leadership by Character</span>
+              <p className="text-stone-950 font-normal leading-relaxed">
                 Formal academic qualifications are not traditionally required. The office demands high moral integrity, sound judgment, patience, and the ability to listen impartially to all sides.
               </p>
             </div>
-            <div className="p-4 bg-stone-50 rounded-xl border border-stone-200 text-xs space-y-1.5">
-              <span className="font-semibold text-stone-900">Diplomatic Representation</span>
-              <p className="text-stone-600">
+            <div className="p-5 bg-[#fdfbf7] rounded-xl border-2 border-stone-300 text-sm sm:text-base space-y-2">
+              <span className="font-extrabold text-stone-950 text-base">Diplomatic Representation</span>
+              <p className="text-stone-950 font-normal leading-relaxed">
                 The Hayu acts as the paramount representative of the Wailwana when engaging neighbouring communities, cultural delegations, and government authorities.
               </p>
             </div>
           </div>
-          <p className="text-sm text-stone-600">
-            Every year in <strong>December</strong>, the community organizes the annual <em>Hayu Celebrations</em>, featuring dedicated traditional praise songs honoring his stewardship and reaffirming communal identity.
+          <p className="text-base text-stone-950 font-medium">
+            Every year in <strong className="text-stone-950 font-extrabold">December</strong>, the community organizes the annual <em className="text-stone-950 font-semibold">Hayu Celebrations</em>, featuring dedicated traditional praise songs honoring his stewardship and reaffirming communal identity.
           </p>
         </div>
       </section>
@@ -106,28 +106,28 @@ export const GovernancePage: React.FC<GovernancePageProps> = ({ onNavigate }) =>
 
       {/* The Gasa Institution */}
       <section className="space-y-6">
-        <div className="border-b border-stone-200 pb-3">
-          <h2 className="font-serif text-2xl font-bold text-stone-900">
+        <div className="border-b-2 border-stone-300 pb-3">
+          <h2 className="font-serif text-2xl sm:text-3xl font-black text-stone-950">
             The Gasa: Supreme Consultative Council
           </h2>
-          <p className="text-sm text-stone-500">
+          <p className="text-base text-stone-950 font-medium">
             The highest traditional forum for resolving major disputes and determining policy.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white p-6 rounded-xl border border-stone-200 shadow-2xs space-y-2">
-            <span className="text-xs font-mono font-semibold text-[#0f4c5c]">COMPOSITION</span>
-            <h3 className="font-serif text-lg font-bold text-stone-900">Collaborative Assembly</h3>
-            <p className="text-sm text-stone-600 leading-relaxed">
+          <div className="bg-white p-6 rounded-xl border-2 border-stone-300 shadow-2xs space-y-3">
+            <span className="text-xs sm:text-sm font-mono font-bold text-[#0f4c5c]">COMPOSITION</span>
+            <h3 className="font-serif text-xl font-bold text-stone-950">Collaborative Assembly</h3>
+            <p className="text-base text-stone-950 leading-relaxed font-normal">
               Chaired by the Hayu and supported by an elected chairperson, the Gasa convenes senior elders, Islamic scholars (Sheikhs), and clan representatives. Disputes are heard with procedural thoroughness, examining historical precedent preserved in collective memory.
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-xl border border-stone-200 shadow-2xs space-y-2">
-            <span className="text-xs font-mono font-semibold text-[#9a3412]">OBJECTIVE</span>
-            <h3 className="font-serif text-lg font-bold text-stone-900">Restorative Justice</h3>
-            <p className="text-sm text-stone-600 leading-relaxed">
+          <div className="bg-white p-6 rounded-xl border-2 border-stone-300 shadow-2xs space-y-3">
+            <span className="text-xs sm:text-sm font-mono font-bold text-[#9a3412]">OBJECTIVE</span>
+            <h3 className="font-serif text-xl font-bold text-stone-950">Restorative Justice</h3>
+            <p className="text-base text-stone-950 leading-relaxed font-normal">
               The purpose of the Gasa is restorative rather than punitive. The goal is to repair relationships, establish fair compensation, remove bitterness, and restore social harmony among families and villages.
             </p>
           </div>
@@ -136,11 +136,11 @@ export const GovernancePage: React.FC<GovernancePageProps> = ({ onNavigate }) =>
 
       {/* The 8 Traditional Clans */}
       <section className="space-y-6">
-        <div className="border-b border-stone-200 pb-3">
-          <h2 className="font-serif text-2xl font-bold text-stone-900">
+        <div className="border-b-2 border-stone-300 pb-3">
+          <h2 className="font-serif text-2xl sm:text-3xl font-black text-stone-950">
             The Eight Traditional Clans of the Ilwana
           </h2>
-          <p className="text-sm text-stone-500">
+          <p className="text-base text-stone-950 font-medium">
             Clans provide the social framework through which Wailwana identify lineage, regulate marriage, and mobilize mutual support.
           </p>
         </div>
@@ -149,15 +149,15 @@ export const GovernancePage: React.FC<GovernancePageProps> = ({ onNavigate }) =>
           {CLANS_DATA.map((clan, idx) => (
             <div
               key={idx}
-              className="bg-white p-5 rounded-xl border border-stone-200 shadow-2xs space-y-2"
+              className="bg-white p-5 rounded-xl border-2 border-stone-300 shadow-2xs space-y-2 hover:border-[#0f4c5c] transition-colors"
             >
               <div className="flex items-center justify-between">
-                <h3 className="font-serif text-xl font-bold text-stone-900">
+                <h3 className="font-serif text-xl font-black text-stone-950">
                   {clan.name}
                 </h3>
-                <span className="text-[11px] font-mono text-stone-400">Clan</span>
+                <span className="text-xs font-mono font-bold text-[#0f4c5c] bg-teal-50 px-2 py-0.5 rounded">Clan</span>
               </div>
-              <p className="text-xs text-stone-600 leading-relaxed">
+              <p className="text-sm text-stone-950 leading-relaxed font-normal">
                 {clan.roleDescription}
               </p>
             </div>
@@ -166,18 +166,18 @@ export const GovernancePage: React.FC<GovernancePageProps> = ({ onNavigate }) =>
       </section>
 
       {/* Land Ownership & Boundaries */}
-      <section className="bg-stone-50 p-6 sm:p-8 rounded-2xl border border-stone-200 space-y-4">
-        <div className="flex items-center gap-2 text-stone-900">
-          <Scale className="w-6 h-6 text-[#0f4c5c]" />
-          <h3 className="font-serif text-xl font-bold">
+      <section className="bg-white p-6 sm:p-8 rounded-2xl border-2 border-stone-300 space-y-4">
+        <div className="flex items-center gap-2 text-stone-950">
+          <Scale className="w-7 h-7 text-[#0f4c5c]" />
+          <h3 className="font-serif text-2xl font-black text-stone-950">
             Land Rights & Generational Boundary Memory
           </h3>
         </div>
-        <p className="text-sm text-stone-700 leading-relaxed">
+        <p className="text-base text-stone-950 leading-relaxed font-normal">
           Because the community has historically depended on floodplain farming along the River Tana, land has always represented both survival and ancestral heritage. Land was inherited from father to sons across generations, preserving family rights along specific agricultural riverbanks.
         </p>
-        <p className="text-sm text-stone-700 leading-relaxed">
-          In the absence of written title deeds, the <strong>memory of elders</strong> served as the community's living registry. Senior elders were expected to remember historical boundaries, natural markers (trees, gullies), previous owners, and inter-family agreements spanning several generations.
+        <p className="text-base text-stone-950 leading-relaxed font-normal">
+          In the absence of written title deeds, the <strong className="text-stone-950 font-bold">memory of elders</strong> served as the community's living registry. Senior elders were expected to remember historical boundaries, natural markers (trees, gullies), previous owners, and inter-family agreements spanning several generations.
         </p>
       </section>
     </div>

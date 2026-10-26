@@ -11,7 +11,10 @@
     scroll-behavior: smooth;
     font-family: var(--font-sans);
     background-color: #fbf9f5;
-    color: #1c1917;
+    color: #0c0a09;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 }
 

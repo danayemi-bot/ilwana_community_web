@@ -167,57 +167,57 @@ export const LanguagePage: React.FC<LanguagePageProps> = ({ onNavigate, onSelect
         </div>
 
         {/* Vocabulary Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {filteredEntries.map((item) => (
             <div
               key={item.id}
-              className="bg-white p-5 rounded-xl border border-stone-200 shadow-2xs hover:border-[#0f4c5c] transition-all space-y-3"
+              className="bg-white p-5 sm:p-6 rounded-2xl border-2 border-stone-300 shadow-xs hover:border-[#0f4c5c] transition-all space-y-3.5"
             >
-              <div className="flex items-start justify-between">
+              <div className="flex items-start justify-between gap-2">
                 <div>
-                  <h3 className="font-serif text-xl font-bold text-stone-900">
+                  <h3 className="font-serif text-2xl font-extrabold text-stone-950">
                     {item.term}
                   </h3>
                   {item.phoneticHint && (
-                    <span className="text-[11px] font-mono text-stone-400">
+                    <span className="text-xs font-mono font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded border border-amber-200 inline-block mt-0.5">
                       [{item.phoneticHint}]
                     </span>
                   )}
                 </div>
-                <span className="text-[10px] uppercase font-mono px-2 py-0.5 bg-stone-100 text-stone-600 rounded">
+                <span className="text-xs font-mono font-bold uppercase px-2.5 py-1 bg-stone-100 text-stone-900 rounded border border-stone-200 shrink-0">
                   {item.category}
                 </span>
               </div>
 
-              <div className="space-y-1 border-t border-stone-100 pt-2">
-                <div className="text-sm font-semibold text-stone-800">
+              <div className="space-y-1.5 border-t-2 border-stone-100 pt-3">
+                <div className="text-base font-bold text-stone-950">
                   {item.englishMeaning}
                 </div>
                 {item.swahiliMeaning && (
-                  <div className="text-xs text-stone-500">
-                    Kiswahili: <em className="text-stone-700">{item.swahiliMeaning}</em>
+                  <div className="text-sm font-semibold text-stone-900">
+                    Kiswahili: <strong className="text-stone-950 underline decoration-teal-500 font-extrabold">{item.swahiliMeaning}</strong>
                   </div>
                 )}
               </div>
 
               {item.culturalContext && (
-                <p className="text-xs text-stone-600 line-clamp-2 italic">
+                <p className="text-sm text-stone-900 leading-relaxed font-normal bg-[#fdfbf7] p-3 rounded-xl border border-stone-200">
                   "{item.culturalContext}"
                 </p>
               )}
 
-              <div className="pt-2 flex items-center justify-between text-xs text-stone-400 border-t border-stone-100">
-                <span className="flex items-center gap-1 text-emerald-700">
-                  <CheckCircle2 className="w-3.5 h-3.5" /> Verified
+              <div className="pt-2 flex items-center justify-between text-xs text-stone-500 border-t border-stone-100">
+                <span className="flex items-center gap-1 text-emerald-800 font-bold">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600" /> Verified
                 </span>
                 <button
                   onClick={() => {
                     if (onSelectGlossaryTerm) onSelectGlossaryTerm(item.id);
                     onNavigate('glossary');
                   }}
-                  className="text-[#0f4c5c] hover:underline font-medium text-[11px]"
+                  className="text-[#0f4c5c] hover:underline font-bold text-xs"
                 >
-                  View entry
+                  View full entry →
                 </button>
               </div>
             </div>

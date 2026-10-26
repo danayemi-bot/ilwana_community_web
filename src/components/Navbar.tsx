@@ -47,21 +47,28 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenSe
 
   return (
     <>
-      <header className="sticky top-0 z-40 bg-[#fbf9f5]/95 backdrop-blur-md border-b border-stone-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-8 h-18">
-            {/* Zone 1: Wordmark with Logo */}
+      <header className="sticky top-0 z-40 bg-[#fdfbf7]/98 backdrop-blur-md border-b-2 border-stone-300 shadow-xs">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between gap-3 sm:gap-6 h-20 sm:h-22">
+            {/* Zone 1: Wordmark with Prominent, High-Visibility Logo */}
             <button
               onClick={() => handleNavClick('home')}
-              className="flex items-center gap-3 text-left font-serif text-xl sm:text-2xl font-bold tracking-tight text-stone-900 hover:text-[#0f4c5c] transition-colors whitespace-nowrap shrink-0 group"
+              className="flex items-center gap-3 sm:gap-3.5 text-left group shrink-0"
               aria-label="Ilwana Community Heritage Homepage"
             >
               <img
                 src="/assets/aistudio/image_ae57196b.png"
-                alt="Ilwana Community Heritage Logo"
-                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover border border-stone-300 shadow-2xs group-hover:scale-105 transition-transform shrink-0"
+                alt="Ilwana Community Heritage Emblem"
+                className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-amber-500 shadow-md group-hover:scale-105 transition-transform shrink-0 bg-white ring-2 ring-[#0f4c5c]"
               />
-              <span>Ilwana Community Heritage</span>
+              <div className="flex flex-col justify-center">
+                <span className="font-serif text-lg sm:text-2xl font-black text-stone-950 tracking-tight leading-tight group-hover:text-[#0f4c5c] transition-colors">
+                  Ilwana Heritage
+                </span>
+                <span className="text-[11px] sm:text-xs font-extrabold text-[#0f4c5c] uppercase tracking-wider">
+                  Community Archive
+                </span>
+              </div>
             </button>
 
             {/* Zone 2: 4-5 concise single-line primary links */}
@@ -176,55 +183,55 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenSe
           <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
             <aside className="w-screen max-w-md bg-[#fbf9f5] border-l border-stone-200 shadow-2xl flex flex-col">
               {/* Header */}
-              <div className="p-6 border-b border-stone-200 flex items-center justify-between">
-                <div className="flex items-center gap-3">
+              <div className="p-6 border-b-2 border-stone-300 flex items-center justify-between bg-white">
+                <div className="flex items-center gap-3.5">
                   <img
                     src="/assets/aistudio/image_ae57196b.png"
-                    alt="Ilwana Community Heritage Logo"
-                    className="w-10 h-10 rounded-full object-cover border border-stone-300 shadow-2xs shrink-0"
+                    alt="Ilwana Community Heritage Emblem"
+                    className="w-16 h-16 rounded-full object-cover border-2 border-amber-500 shadow-md shrink-0 bg-white ring-2 ring-[#0f4c5c]"
                   />
                   <div>
-                    <h2 className="font-serif text-lg font-bold text-stone-900">Archive Directory</h2>
-                    <p className="text-xs text-stone-500 mt-0.5">12 Principal Heritage Sections</p>
+                    <h2 className="font-serif text-xl sm:text-2xl font-black text-stone-950">Archive Directory</h2>
+                    <p className="text-xs sm:text-sm font-bold text-[#0f4c5c] mt-0.5">12 Principal Heritage Sections</p>
                   </div>
                 </div>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 text-stone-500 hover:text-stone-900 hover:bg-stone-200/50 rounded-md transition-colors"
+                  className="p-2.5 text-stone-700 hover:text-stone-950 hover:bg-stone-100 rounded-lg transition-colors border border-stone-300"
                   aria-label="Close Drawer"
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-6 h-6" />
                 </button>
               </div>
 
               {/* Links list */}
-              <div className="flex-1 overflow-y-auto p-4 space-y-1">
+              <div className="flex-1 overflow-y-auto p-4 space-y-2">
                 {SECTIONS.map((sec) => {
                   const isActive = activePage === sec.id;
                   return (
                     <button
                       key={sec.id}
                       onClick={() => handleNavClick(sec.id)}
-                      className={`w-full flex items-center justify-between px-4 py-3 rounded-md text-left transition-colors ${
+                      className={`w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-left transition-all ${
                         isActive
-                          ? 'bg-[#0f4c5c] text-white font-medium'
-                          : 'text-stone-800 hover:bg-stone-200/60'
+                          ? 'bg-[#0f4c5c] text-white font-bold shadow-sm'
+                          : 'text-stone-950 hover:bg-stone-200/70 border border-transparent hover:border-stone-300'
                       }`}
                     >
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-3.5">
                         <span
-                          className={`text-xs font-mono tabular-nums ${
-                            isActive ? 'text-teal-200' : 'text-stone-400'
+                          className={`text-xs font-mono font-bold tabular-nums ${
+                            isActive ? 'text-amber-300' : 'text-stone-500'
                           }`}
                         >
                           {sec.number}
                         </span>
-                        <span className="text-sm font-medium">{sec.label}</span>
+                        <span className="text-base font-bold tracking-tight">{sec.label}</span>
                       </div>
                       {sec.id === 'glossary' && (
                         <span
-                          className={`text-[11px] px-2 py-0.5 rounded text-xs font-semibold ${
-                            isActive ? 'bg-white/20 text-white' : 'bg-stone-200 text-stone-700'
+                          className={`text-xs px-2.5 py-1 rounded-md font-extrabold ${
+                            isActive ? 'bg-amber-400 text-stone-950' : 'bg-stone-200 text-stone-950'
                           }`}
                         >
                           A–Z

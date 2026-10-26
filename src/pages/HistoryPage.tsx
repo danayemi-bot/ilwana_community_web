@@ -16,47 +16,47 @@ export const HistoryPage: React.FC<HistoryPageProps> = ({ onNavigate }) => {
           <Compass className="w-4 h-4" />
           <span>Section 02 · Historical Foundation</span>
         </div>
-        <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-stone-900">
+        <h1 className="font-serif text-3xl sm:text-5xl font-extrabold tracking-tight text-stone-950 leading-tight">
           Origins, Migration & Identity of the Ilwana
         </h1>
-        <p className="text-base sm:text-lg text-stone-600 leading-relaxed max-w-3xl">
+        <p className="text-base sm:text-xl text-stone-900 font-medium leading-relaxed max-w-3xl">
           The Ilwana Community possesses a rich history, a distinct language, and a unique cultural identity preserved and transmitted across centuries along the River Tana.
         </p>
       </div>
 
       {/* Etymology & Linguistic Distinction */}
       <section className="space-y-6">
-        <h2 className="font-serif text-2xl font-bold text-stone-900">
+        <h2 className="font-serif text-2xl sm:text-3xl font-extrabold text-stone-950">
           The Names: Ilwana and Wailwana
         </h2>
-        <div className="prose max-w-none text-stone-700 leading-relaxed space-y-4 text-base">
+        <div className="prose max-w-none text-stone-900 leading-relaxed space-y-4 text-base sm:text-lg">
           <p>
             Understanding the identity of the community begins with understanding the terminology used by the people themselves. In the Kilwana language, a vital grammatical distinction is maintained:
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-            <div className="bg-white p-6 rounded-xl border border-stone-200 shadow-2xs space-y-2">
-              <span className="text-xs font-mono text-[#0f4c5c] font-semibold">COLLECTIVE ENTITY</span>
-              <h3 className="font-serif text-xl font-bold text-stone-900">Ilwana</h3>
-              <p className="text-sm text-stone-600">
-                Refers to the <strong>community as a whole</strong>, its culture, shared territory, and ethnic body. Comparable to how "Pokomo" or "Kamba" refers to the community.
+            <div className="bg-white p-6 rounded-2xl border-2 border-stone-300 shadow-xs space-y-2.5">
+              <span className="text-xs font-mono text-[#0f4c5c] font-bold tracking-wider">COLLECTIVE ENTITY</span>
+              <h3 className="font-serif text-2xl font-extrabold text-stone-950">Ilwana</h3>
+              <p className="text-base text-stone-900 font-normal leading-relaxed">
+                Refers to the <strong className="text-stone-950 font-bold">community as a whole</strong>, its culture, shared territory, and ethnic body. Comparable to how "Pokomo" or "Kamba" refers to the community.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-xl border border-stone-200 shadow-2xs space-y-2">
-              <span className="text-xs font-mono text-[#0f4c5c] font-semibold">INDIVIDUAL MEMBERS</span>
-              <h3 className="font-serif text-xl font-bold text-stone-900">Wailwana</h3>
-              <p className="text-sm text-stone-600">
-                Refers to the <strong>individual people</strong> belonging to the community. Comparable to "Wapokomo" or "Wakamba" in Kenyan linguistic structures.
+            <div className="bg-white p-6 rounded-2xl border-2 border-stone-300 shadow-xs space-y-2.5">
+              <span className="text-xs font-mono text-[#0f4c5c] font-bold tracking-wider">INDIVIDUAL MEMBERS</span>
+              <h3 className="font-serif text-2xl font-extrabold text-stone-950">Wailwana</h3>
+              <p className="text-base text-stone-900 font-normal leading-relaxed">
+                Refers to the <strong className="text-stone-950 font-bold">individual people</strong> belonging to the community. Comparable to "Wapokomo" or "Wakamba" in Kenyan linguistic structures.
               </p>
             </div>
           </div>
           <p>
-            Within the community, the name <strong>Ilwana</strong> carries profound philosophical meaning. It is widely associated with the concept of <em>free people</em> or <em>free men</em>, embodying core values of independence, self-governance, dignity, and communal pride.
+            Within the community, the name <strong className="text-stone-950 font-bold">Ilwana</strong> carries profound philosophical meaning. It is widely associated with the concept of <em className="text-stone-950 font-semibold">free people</em> or <em className="text-stone-950 font-semibold">free men</em>, embodying core values of independence, self-governance, dignity, and communal pride.
           </p>
         </div>
       </section>
 
       {/* Clarification on "Malakote" */}
-      <section className="bg-white p-6 sm:p-8 rounded-2xl border border-stone-300 shadow-xs space-y-4">
+      <section className="bg-white p-6 sm:p-8 rounded-2xl border-2 border-stone-300 shadow-xs space-y-4">
         <div className="flex items-start gap-3">
           <AlertCircle className="w-6 h-6 text-[#9a3412] shrink-0 mt-1" />
           <div className="space-y-2">
