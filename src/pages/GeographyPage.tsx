@@ -34,19 +34,47 @@ export const GeographyPage: React.FC<GeographyPageProps> = ({ onNavigate }) => {
       </div>
 
       {/* The River Tana Bond */}
-      <section className="bg-white p-6 sm:p-8 rounded-2xl border-2 border-stone-300 shadow-xs space-y-4">
+      <section className="bg-white p-6 sm:p-8 rounded-3xl border-2 border-stone-300 shadow-xs space-y-6">
         <div className="flex items-center gap-3 text-[#0f4c5c]">
           <Waves className="w-7 h-7" />
           <h2 className="font-serif text-2xl sm:text-3xl font-black text-stone-950">
             The Centrality of the River Tana (Chaana)
           </h2>
         </div>
-        <div className="prose max-w-none text-stone-950 leading-relaxed space-y-3 text-base sm:text-lg font-normal">
+
+        {/* 2 River Tana Photos */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="rounded-2xl overflow-hidden border-2 border-teal-600 shadow-md">
+            <img
+              src="/assets/aistudio/chaana_de7f7d77.png"
+              alt="Aerial horseshoe bend of River Tana"
+              className="w-full h-56 object-cover"
+            />
+            <div className="bg-stone-950 text-stone-200 p-2.5 text-xs font-medium">
+              <span className="font-black text-amber-400 block uppercase">River Meanders</span>
+              Aerial view of the dramatic horseshoe bend of River Tana flowing through Ilwana territory.
+            </div>
+          </div>
+
+          <div className="rounded-2xl overflow-hidden border-2 border-teal-600 shadow-md">
+            <img
+              src="/assets/aistudio/rivertana_a0788a57.png"
+              alt="River Tana alluvial waters"
+              className="w-full h-56 object-cover"
+            />
+            <div className="bg-stone-950 text-stone-200 p-2.5 text-xs font-medium">
+              <span className="font-black text-amber-400 block uppercase">Alluvial Flow</span>
+              The flowing waters and dense riverine canopy nourishing traditional floodplain agriculture.
+            </div>
+          </div>
+        </div>
+
+        <div className="prose max-w-none text-stone-950 leading-relaxed space-y-3 text-base sm:text-lg font-normal pt-2">
           <p>
-            For the Ilwana Community, the River Tana has been more than a physical waterway; it has been the foundation of community survival for generations. Its fertile alluvial floodplains support recession agriculture, its waters supply fish and domestic needs, and its surface provides traditional transportation routes navigated by hand-carved canoes (<em className="text-stone-950 font-semibold">Waato</em>).
+            For the Ilwana Community, the River Tana (<em className="text-stone-950 font-bold">Chaana</em>) has been more than a physical waterway; it is the foundation of community survival for generations. Its fertile alluvial floodplains support recession agriculture, its waters supply fish and domestic needs, and its surface provides traditional transportation routes navigated by hand-carved canoes (<em className="text-stone-950 font-semibold">Waato</em>).
           </p>
           <p>
-            The river also created unique cultural practices such as <strong className="text-stone-950 font-bold">River Calling</strong>, where families living on opposite banks communicated loudly across the water without traveling long distances.
+            The river also created unique cultural practices such as <strong className="text-stone-950 font-black">River Calling</strong>, where families living on opposite banks communicated loudly across the water without traveling long distances.
           </p>
         </div>
       </section>

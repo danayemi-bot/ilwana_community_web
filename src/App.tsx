@@ -14,6 +14,7 @@ import { MaterialCulturePage } from './pages/MaterialCulturePage';
 import { GlossaryPage } from './pages/GlossaryPage';
 import { DocumentationPage } from './pages/DocumentationPage';
 import { ContributionsPage } from './pages/ContributionsPage';
+import { GalleryPage } from './pages/GalleryPage';
 import { ArrowUp } from 'lucide-react';
 
 export default function App() {
@@ -37,6 +38,7 @@ export default function App() {
         'arts',
         'material',
         'glossary',
+        'gallery',
         'documentation',
         'contribute',
       ];
@@ -127,6 +129,7 @@ export default function App() {
             onClearSelectedTerm={() => setSelectedGlossaryTerm(undefined)}
           />
         )}
+        {activePage === 'gallery' && <GalleryPage onNavigate={handleNavigate} />}
         {activePage === 'documentation' && <DocumentationPage onNavigate={handleNavigate} />}
         {activePage === 'contribute' && <ContributionsPage onNavigate={handleNavigate} />}
       </main>

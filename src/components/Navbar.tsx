@@ -1,5 +1,21 @@
 import React, { useState } from 'react';
-import { Menu, X, BookOpen, Search } from 'lucide-react';
+import {
+  Home,
+  BookOpen,
+  Users,
+  Shield,
+  Book,
+  Camera,
+  ChevronDown,
+  Search,
+  Menu,
+  X,
+  Compass,
+  Hammer,
+  Sparkles,
+  MapPin,
+  Heart
+} from 'lucide-react';
 
 export type PageId =
   | 'home'
@@ -13,7 +29,8 @@ export type PageId =
   | 'material'
   | 'glossary'
   | 'documentation'
-  | 'contribute';
+  | 'contribute'
+  | 'gallery';
 
 interface NavbarProps {
   activePage: PageId;
@@ -21,19 +38,20 @@ interface NavbarProps {
   onOpenSearch?: () => void;
 }
 
-export const SECTIONS: { id: PageId; label: string; number: string }[] = [
-  { id: 'home', label: 'Home', number: '01' },
-  { id: 'history', label: 'History & Identity', number: '02' },
-  { id: 'geography', label: 'Geography & Homeland', number: '03' },
-  { id: 'language', label: 'Kilwana Language', number: '04' },
-  { id: 'social', label: 'Social & Culture', number: '05' },
-  { id: 'religion', label: 'Belief Systems', number: '06' },
-  { id: 'governance', label: 'Governance & Hayu', number: '07' },
-  { id: 'arts', label: 'Arts & Music', number: '08' },
-  { id: 'material', label: 'Material Culture', number: '09' },
-  { id: 'glossary', label: 'Glossary', number: '10' },
-  { id: 'documentation', label: 'Documentation', number: '11' },
-  { id: 'contribute', label: 'Future Contributions', number: '12' },
+export const SECTIONS: { id: PageId; label: string; number: string; icon: any }[] = [
+  { id: 'home', label: 'Home', number: '01', icon: Home },
+  { id: 'history', label: 'History & Identity', number: '02', icon: BookOpen },
+  { id: 'geography', label: 'Geography & Homeland', number: '03', icon: MapPin },
+  { id: 'language', label: 'Kilwana Language', number: '04', icon: Book },
+  { id: 'social', label: 'Social & Culture (Our People)', number: '05', icon: Users },
+  { id: 'religion', label: 'Belief Systems (Our Faith)', number: '06', icon: Heart },
+  { id: 'governance', label: 'Governance & Hayu', number: '07', icon: Shield },
+  { id: 'arts', label: 'Arts & Music (Our Culture)', number: '08', icon: Sparkles },
+  { id: 'material', label: 'Material Culture & Crafts', number: '09', icon: Hammer },
+  { id: 'glossary', label: 'Kilwana Glossary (A–Z)', number: '10', icon: BookOpen },
+  { id: 'gallery', label: 'Visual Photo Gallery', number: '11', icon: Camera },
+  { id: 'documentation', label: 'Documentation & Sources', number: '12', icon: Compass },
+  { id: 'contribute', label: 'Community Contributions', number: '13', icon: Users },
 ];
 
 export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenSearch }) => {
@@ -47,158 +65,193 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenSe
 
   return (
     <>
-      <header className="sticky top-0 z-40 bg-[#fdfbf7]/98 backdrop-blur-md border-b-2 border-stone-300 shadow-xs">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-3 sm:gap-6 h-20 sm:h-22">
-            {/* Zone 1: Wordmark with Prominent, High-Visibility Logo */}
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200/80 shadow-xs">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between gap-4 h-24 sm:h-28">
+            
+            {/* Left Zone: Brand Logo & Typography directly matching web_landing_pg */}
             <button
               onClick={() => handleNavClick('home')}
-              className="flex items-center gap-3 sm:gap-3.5 text-left group shrink-0"
+              className="flex items-center gap-3 sm:gap-4 text-left group shrink-0"
               aria-label="Ilwana Community Heritage Homepage"
             >
               <img
-                src="/assets/aistudio/image_ae57196b.png"
+                src="/assets/aistudio/ilwana_logo_5e073fe7.png"
                 alt="Ilwana Community Heritage Emblem"
-                className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-amber-500 shadow-md group-hover:scale-105 transition-transform shrink-0 bg-white ring-2 ring-[#0f4c5c]"
+                className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-full object-cover border-2 border-amber-500 shadow-md group-hover:scale-105 transition-transform shrink-0 bg-white"
               />
               <div className="flex flex-col justify-center">
-                <span className="font-serif text-lg sm:text-2xl font-black text-stone-950 tracking-tight leading-tight group-hover:text-[#0f4c5c] transition-colors">
-                  Ilwana Heritage
+                <span className="font-serif text-2xl sm:text-3xl lg:text-4xl font-black text-[#14532d] tracking-tight leading-none group-hover:text-[#064e3b] transition-colors">
+                  ILWANA
                 </span>
-                <span className="text-[11px] sm:text-xs font-extrabold text-[#0f4c5c] uppercase tracking-wider">
-                  Community Archive
+                <span className="font-sans text-xs sm:text-sm lg:text-base font-extrabold text-[#166534] tracking-wider uppercase mt-0.5">
+                  COMMUNITY HERITAGE
+                </span>
+                <span className="text-[11px] sm:text-xs font-serif italic text-[#78350f] font-semibold tracking-normal mt-0.5 max-w-xs sm:max-w-md line-clamp-1">
+                  Preserving the History, Language, Culture, and Heritage of the Wailwana.
                 </span>
               </div>
             </button>
 
-            {/* Zone 2: 4-5 concise single-line primary links */}
-            <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-stone-700">
-              <button
-                onClick={() => handleNavClick('home')}
-                className={`whitespace-nowrap shrink-0 transition-colors py-1 ${
-                  activePage === 'home'
-                    ? 'text-[#0f4c5c] font-semibold border-b-2 border-[#0f4c5c]'
-                    : 'hover:text-stone-950'
-                }`}
-              >
-                Overview
-              </button>
-              <button
-                onClick={() => handleNavClick('history')}
-                className={`whitespace-nowrap shrink-0 transition-colors py-1 ${
-                  activePage === 'history'
-                    ? 'text-[#0f4c5c] font-semibold border-b-2 border-[#0f4c5c]'
-                    : 'hover:text-stone-950'
-                }`}
-              >
-                History
-              </button>
-              <button
-                onClick={() => handleNavClick('language')}
-                className={`whitespace-nowrap shrink-0 transition-colors py-1 ${
-                  activePage === 'language'
-                    ? 'text-[#0f4c5c] font-semibold border-b-2 border-[#0f4c5c]'
-                    : 'hover:text-stone-950'
-                }`}
-              >
-                Language
-              </button>
-              <button
-                onClick={() => handleNavClick('governance')}
-                className={`whitespace-nowrap shrink-0 transition-colors py-1 ${
-                  activePage === 'governance'
-                    ? 'text-[#0f4c5c] font-semibold border-b-2 border-[#0f4c5c]'
-                    : 'hover:text-stone-950'
-                }`}
-              >
-                Governance
-              </button>
-              <button
-                onClick={() => handleNavClick('arts')}
-                className={`whitespace-nowrap shrink-0 transition-colors py-1 ${
-                  activePage === 'arts'
-                    ? 'text-[#0f4c5c] font-semibold border-b-2 border-[#0f4c5c]'
-                    : 'hover:text-stone-950'
-                }`}
-              >
-                Arts & Music
-              </button>
-              <button
-                onClick={() => setMobileMenuOpen(true)}
-                className="whitespace-nowrap shrink-0 text-stone-600 hover:text-stone-900 transition-colors flex items-center gap-1.5 py-1"
-                title="View all 12 heritage sections"
-              >
-                <span>All Sections</span>
-                <span className="text-xs font-mono text-stone-400">12</span>
-              </button>
-            </nav>
+            {/* Right Zone: Floating Rounded Capsule Navbar Container */}
+            <div className="hidden xl:flex items-center">
+              <nav className="bg-white/95 rounded-full border border-stone-300 shadow-sm p-1.5 flex items-center gap-1">
+                {/* Home */}
+                <button
+                  onClick={() => handleNavClick('home')}
+                  className={`flex items-center gap-1.5 px-4 py-2 rounded-full font-bold text-sm transition-all ${
+                    activePage === 'home'
+                      ? 'bg-[#1b4332] text-white shadow-xs'
+                      : 'text-stone-800 hover:text-[#1b4332] hover:bg-stone-100'
+                  }`}
+                >
+                  <Home className="w-4 h-4" />
+                  <span>Home</span>
+                </button>
 
-            {/* Zone 3: Primary Action (Compulsory Glossary access) */}
-            <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+                {/* History */}
+                <button
+                  onClick={() => handleNavClick('history')}
+                  className={`flex items-center gap-1.5 px-3.5 py-2 rounded-full font-bold text-sm transition-all ${
+                    activePage === 'history'
+                      ? 'bg-[#1b4332] text-white shadow-xs'
+                      : 'text-stone-800 hover:text-[#1b4332] hover:bg-stone-100'
+                  }`}
+                >
+                  <BookOpen className="w-4 h-4 text-stone-600" />
+                  <span>History</span>
+                </button>
+
+                {/* Our People (Social) */}
+                <button
+                  onClick={() => handleNavClick('social')}
+                  className={`flex items-center gap-1.5 px-3.5 py-2 rounded-full font-bold text-sm transition-all ${
+                    activePage === 'social'
+                      ? 'bg-[#1b4332] text-white shadow-xs'
+                      : 'text-stone-800 hover:text-[#1b4332] hover:bg-stone-100'
+                  }`}
+                >
+                  <Users className="w-4 h-4 text-stone-600" />
+                  <span>Our People</span>
+                </button>
+
+                {/* Culture (Arts) */}
+                <button
+                  onClick={() => handleNavClick('arts')}
+                  className={`flex items-center gap-1.5 px-3.5 py-2 rounded-full font-bold text-sm transition-all ${
+                    activePage === 'arts'
+                      ? 'bg-[#1b4332] text-white shadow-xs'
+                      : 'text-stone-800 hover:text-[#1b4332] hover:bg-stone-100'
+                  }`}
+                >
+                  <Shield className="w-4 h-4 text-stone-600" />
+                  <span>Culture</span>
+                </button>
+
+                {/* Language */}
+                <button
+                  onClick={() => handleNavClick('language')}
+                  className={`flex items-center gap-1.5 px-3.5 py-2 rounded-full font-bold text-sm transition-all ${
+                    activePage === 'language'
+                      ? 'bg-[#1b4332] text-white shadow-xs'
+                      : 'text-stone-800 hover:text-[#1b4332] hover:bg-stone-100'
+                  }`}
+                >
+                  <Book className="w-4 h-4 text-stone-600" />
+                  <span>Language</span>
+                </button>
+
+                {/* Gallery */}
+                <button
+                  onClick={() => handleNavClick('gallery')}
+                  className={`flex items-center gap-1.5 px-3.5 py-2 rounded-full font-bold text-sm transition-all ${
+                    activePage === 'gallery'
+                      ? 'bg-[#1b4332] text-white shadow-xs'
+                      : 'text-stone-800 hover:text-[#1b4332] hover:bg-stone-100'
+                  }`}
+                >
+                  <Camera className="w-4 h-4 text-stone-600" />
+                  <span>Gallery</span>
+                </button>
+
+                {/* More dropdown */}
+                <button
+                  onClick={() => setMobileMenuOpen(true)}
+                  className="flex items-center gap-1 px-3 py-2 rounded-full text-stone-800 hover:text-[#1b4332] hover:bg-stone-100 font-bold text-sm transition-colors"
+                >
+                  <span>More</span>
+                  <ChevronDown className="w-4 h-4 text-stone-500" />
+                </button>
+
+                {/* Search Icon button */}
+                {onOpenSearch && (
+                  <button
+                    onClick={onOpenSearch}
+                    className="p-2 rounded-full hover:bg-stone-100 text-stone-700 hover:text-[#1b4332] transition-colors ml-1"
+                    title="Search Archive (Ctrl+K)"
+                    aria-label="Search Heritage Content"
+                  >
+                    <Search className="w-4 h-4" />
+                  </button>
+                )}
+              </nav>
+            </div>
+
+            {/* Mobile / Tablet Menu Button */}
+            <div className="flex xl:hidden items-center gap-2">
               {onOpenSearch && (
                 <button
                   onClick={onOpenSearch}
-                  className="p-2 text-stone-600 hover:text-stone-900 hover:bg-stone-100 rounded-md transition-colors"
-                  aria-label="Search Heritage Content"
-                  title="Search Archive & Vocabulary"
+                  className="p-2.5 text-stone-800 hover:text-[#14532d] hover:bg-stone-100 rounded-full border border-stone-300"
+                  aria-label="Search"
                 >
                   <Search className="w-5 h-5" />
                 </button>
               )}
               <button
-                onClick={() => handleNavClick('glossary')}
-                className={`flex items-center gap-2 px-4 py-2 text-xs sm:text-sm font-semibold rounded-md transition-all whitespace-nowrap shrink-0 shadow-xs ${
-                  activePage === 'glossary'
-                    ? 'bg-[#0f4c5c] text-white ring-2 ring-[#0f4c5c]/30'
-                    : 'bg-stone-900 hover:bg-[#0f4c5c] text-white'
-                }`}
-              >
-                <BookOpen className="w-4 h-4" />
-                <span>Glossary</span>
-              </button>
-
-              {/* Mobile menu button */}
-              <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 text-stone-700 hover:text-stone-900 hover:bg-stone-100 rounded-md transition-colors"
-                aria-label="Toggle Navigation Drawer"
+                className="p-2.5 bg-stone-900 text-white rounded-xl shadow-sm hover:bg-[#1b4332] transition-colors"
+                aria-label="Open Navigation"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
             </div>
+
           </div>
         </div>
       </header>
 
-      {/* Full Section Drawer (Desktop & Mobile) */}
+      {/* Navigation Drawer */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-50 overflow-hidden">
-          {/* Backdrop */}
           <div
-            className="fixed inset-0 bg-stone-950/40 backdrop-blur-xs transition-opacity"
+            className="fixed inset-0 bg-stone-950/60 backdrop-blur-xs transition-opacity"
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
 
-          <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-            <aside className="w-screen max-w-md bg-[#fbf9f5] border-l border-stone-200 shadow-2xl flex flex-col">
+          <div className="fixed inset-y-0 right-0 max-w-full flex pl-6 sm:pl-10">
+            <aside className="w-screen max-w-md bg-[#fcfbf9] border-l-2 border-stone-300 shadow-2xl flex flex-col">
               {/* Header */}
-              <div className="p-6 border-b-2 border-stone-300 flex items-center justify-between bg-white">
-                <div className="flex items-center gap-3.5">
+              <div className="p-5 sm:p-6 border-b-2 border-stone-300 flex items-center justify-between bg-white">
+                <div className="flex items-center gap-3">
                   <img
-                    src="/assets/aistudio/image_ae57196b.png"
-                    alt="Ilwana Community Heritage Emblem"
-                    className="w-16 h-16 rounded-full object-cover border-2 border-amber-500 shadow-md shrink-0 bg-white ring-2 ring-[#0f4c5c]"
+                    src="/assets/aistudio/ilwana_logo_5e073fe7.png"
+                    alt="Ilwana Logo"
+                    className="w-16 h-16 rounded-full object-cover border-2 border-amber-500 shadow-sm"
                   />
                   <div>
-                    <h2 className="font-serif text-xl sm:text-2xl font-black text-stone-950">Archive Directory</h2>
-                    <p className="text-xs sm:text-sm font-bold text-[#0f4c5c] mt-0.5">12 Principal Heritage Sections</p>
+                    <h2 className="font-serif text-xl font-black text-[#14532d] leading-tight">
+                      ILWANA HERITAGE
+                    </h2>
+                    <p className="text-xs font-bold text-amber-700 mt-0.5">
+                      13 Principal Heritage Sections
+                    </p>
                   </div>
                 </div>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-2.5 text-stone-700 hover:text-stone-950 hover:bg-stone-100 rounded-lg transition-colors border border-stone-300"
-                  aria-label="Close Drawer"
+                  className="p-2 text-stone-800 hover:bg-stone-100 rounded-xl border border-stone-300"
                 >
                   <X className="w-6 h-6" />
                 </button>
@@ -208,45 +261,33 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenSe
               <div className="flex-1 overflow-y-auto p-4 space-y-2">
                 {SECTIONS.map((sec) => {
                   const isActive = activePage === sec.id;
+                  const IconComp = sec.icon;
                   return (
                     <button
                       key={sec.id}
                       onClick={() => handleNavClick(sec.id)}
                       className={`w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-left transition-all ${
                         isActive
-                          ? 'bg-[#0f4c5c] text-white font-bold shadow-sm'
-                          : 'text-stone-950 hover:bg-stone-200/70 border border-transparent hover:border-stone-300'
+                          ? 'bg-[#1b4332] text-white font-black shadow-md'
+                          : 'text-stone-950 hover:bg-stone-200/80 border border-stone-200 font-bold bg-white'
                       }`}
                     >
-                      <div className="flex items-center gap-3.5">
-                        <span
-                          className={`text-xs font-mono font-bold tabular-nums ${
-                            isActive ? 'text-amber-300' : 'text-stone-500'
-                          }`}
-                        >
-                          {sec.number}
-                        </span>
-                        <span className="text-base font-bold tracking-tight">{sec.label}</span>
+                      <div className="flex items-center gap-3">
+                        <IconComp className={`w-5 h-5 ${isActive ? 'text-amber-300' : 'text-stone-600'}`} />
+                        <span className="text-base font-black tracking-tight">{sec.label}</span>
                       </div>
-                      {sec.id === 'glossary' && (
-                        <span
-                          className={`text-xs px-2.5 py-1 rounded-md font-extrabold ${
-                            isActive ? 'bg-amber-400 text-stone-950' : 'bg-stone-200 text-stone-950'
-                          }`}
-                        >
-                          A–Z
-                        </span>
-                      )}
+                      <span className={`text-xs font-mono font-bold ${isActive ? 'text-amber-300' : 'text-stone-500'}`}>
+                        {sec.number}
+                      </span>
                     </button>
                   );
                 })}
               </div>
 
-              {/* Bottom Drawer Card */}
-              <div className="p-4 m-4 bg-stone-100 rounded-lg border border-stone-200 text-xs text-stone-600 space-y-2">
-                <p className="font-semibold text-stone-900">Ilwana Heritage Preservation</p>
-                <p>
-                  A community repository documenting the history, language, governance, and culture of the Wailwana of the River Tana.
+              <div className="p-4 m-4 bg-amber-50 rounded-xl border-2 border-amber-300 text-xs text-stone-950 space-y-1">
+                <p className="font-black text-amber-950">Chaana Do Kweeto</p>
+                <p className="leading-relaxed">
+                  Preserving the history, Kilwana language, cultural leadership, and indigenous technology of the Wailwana.
                 </p>
               </div>
             </aside>

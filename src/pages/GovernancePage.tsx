@@ -38,27 +38,40 @@ export const GovernancePage: React.FC<GovernancePageProps> = ({ onNavigate }) =>
           </div>
         </div>
 
-        <div className="prose max-w-none text-stone-950 leading-relaxed space-y-4 text-base sm:text-lg">
-          <p>
-            The <strong className="text-stone-950 font-extrabold">Hayu</strong> is the traditional king and supreme cultural leader of the Ilwana Community. The institution represents the continuity, unity, and dignity of the Wailwana.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-            <div className="p-5 bg-[#fdfbf7] rounded-xl border-2 border-stone-300 text-sm sm:text-base space-y-2">
-              <span className="font-extrabold text-stone-950 text-base">Leadership by Character</span>
-              <p className="text-stone-950 font-normal leading-relaxed">
-                Formal academic qualifications are not traditionally required. The office demands high moral integrity, sound judgment, patience, and the ability to listen impartially to all sides.
-              </p>
-            </div>
-            <div className="p-5 bg-[#fdfbf7] rounded-xl border-2 border-stone-300 text-sm sm:text-base space-y-2">
-              <span className="font-extrabold text-stone-950 text-base">Diplomatic Representation</span>
-              <p className="text-stone-950 font-normal leading-relaxed">
-                The Hayu acts as the paramount representative of the Wailwana when engaging neighbouring communities, cultural delegations, and government authorities.
-              </p>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center pt-2">
+          <div className="lg:col-span-5 rounded-2xl overflow-hidden border-2 border-amber-400 shadow-md">
+            <img
+              src="/assets/aistudio/hayu_adddressing_67ed9fc2.png"
+              alt="The Hayu addressing community assembly"
+              className="w-full h-auto object-cover"
+            />
+            <div className="bg-stone-900 text-stone-200 p-2.5 text-xs font-medium">
+              <span className="font-black text-amber-400 block uppercase tracking-wide">Authentic Record</span>
+              The Hayu (Traditional King) addressing the Ilwana gathering in traditional regalia.
             </div>
           </div>
-          <p className="text-base text-stone-950 font-medium">
-            Every year in <strong className="text-stone-950 font-extrabold">December</strong>, the community organizes the annual <em className="text-stone-950 font-semibold">Hayu Celebrations</em>, featuring dedicated traditional praise songs honoring his stewardship and reaffirming communal identity.
-          </p>
+          <div className="lg:col-span-7 space-y-4">
+            <p className="text-base sm:text-lg text-stone-950 leading-relaxed font-normal">
+              The <strong className="text-stone-950 font-black">Hayu</strong> is the traditional king and supreme cultural leader of the Ilwana Community. The institution represents the continuity, unity, and dignity of the Wailwana.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="p-4 bg-[#fdfbf7] rounded-xl border-2 border-stone-300 text-sm space-y-1">
+                <span className="font-black text-stone-950 text-base block">Leadership by Character</span>
+                <p className="text-stone-950 font-normal leading-relaxed">
+                  Moral integrity, sound judgment, patience, and the ability to listen impartially to all sides.
+                </p>
+              </div>
+              <div className="p-4 bg-[#fdfbf7] rounded-xl border-2 border-stone-300 text-sm space-y-1">
+                <span className="font-black text-stone-950 text-base block">Paramount Representation</span>
+                <p className="text-stone-950 font-normal leading-relaxed">
+                  Represents the Wailwana when engaging neighbouring communities, cultural delegations, and county authorities.
+                </p>
+              </div>
+            </div>
+            <p className="text-base text-stone-950 font-medium pt-1">
+              Every year in <strong className="text-stone-950 font-black">December</strong>, the community organizes the annual <em className="text-stone-950 font-bold">Hayu Celebrations</em>, featuring dedicated praise songs honoring his leadership and reaffirming communal identity.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -115,21 +128,34 @@ export const GovernancePage: React.FC<GovernancePageProps> = ({ onNavigate }) =>
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white p-6 rounded-xl border-2 border-stone-300 shadow-2xs space-y-3">
-            <span className="text-xs sm:text-sm font-mono font-bold text-[#0f4c5c]">COMPOSITION</span>
-            <h3 className="font-serif text-xl font-bold text-stone-950">Collaborative Assembly</h3>
-            <p className="text-base text-stone-950 leading-relaxed font-normal">
-              Chaired by the Hayu and supported by an elected chairperson, the Gasa convenes senior elders, Islamic scholars (Sheikhs), and clan representatives. Disputes are heard with procedural thoroughness, examining historical precedent preserved in collective memory.
-            </p>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <div className="lg:col-span-5 rounded-2xl overflow-hidden border-2 border-stone-300 shadow-md order-2 lg:order-1">
+            <img
+              src="/assets/aistudio/wailwana_elders_8d71f49e.png"
+              alt="Wailwana Elders in Gasa Council Deliberation"
+              className="w-full h-auto object-cover"
+            />
+            <div className="bg-stone-900 text-stone-200 p-2.5 text-xs font-medium">
+              <span className="font-black text-amber-400 block uppercase tracking-wide">Historical Assembly</span>
+              Wailwana Gasa elders seated in consultative deliberation under the shade of ancient riverine trees.
+            </div>
           </div>
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 order-1 lg:order-2">
+            <div className="bg-white p-6 rounded-xl border-2 border-stone-300 shadow-2xs space-y-3">
+              <span className="text-xs sm:text-sm font-mono font-black text-[#0f4c5c] uppercase">COMPOSITION</span>
+              <h3 className="font-serif text-xl font-black text-stone-950">Collaborative Assembly</h3>
+              <p className="text-base text-stone-950 leading-relaxed font-normal">
+                Chaired by the Hayu and supported by an elected chairperson, the Gasa convenes senior elders, Islamic scholars (Sheikhs), and clan representatives.
+              </p>
+            </div>
 
-          <div className="bg-white p-6 rounded-xl border-2 border-stone-300 shadow-2xs space-y-3">
-            <span className="text-xs sm:text-sm font-mono font-bold text-[#9a3412]">OBJECTIVE</span>
-            <h3 className="font-serif text-xl font-bold text-stone-950">Restorative Justice</h3>
-            <p className="text-base text-stone-950 leading-relaxed font-normal">
-              The purpose of the Gasa is restorative rather than punitive. The goal is to repair relationships, establish fair compensation, remove bitterness, and restore social harmony among families and villages.
-            </p>
+            <div className="bg-white p-6 rounded-xl border-2 border-stone-300 shadow-2xs space-y-3">
+              <span className="text-xs sm:text-sm font-mono font-black text-[#9a3412] uppercase">OBJECTIVE</span>
+              <h3 className="font-serif text-xl font-black text-stone-950">Restorative Justice</h3>
+              <p className="text-base text-stone-950 leading-relaxed font-normal">
+                The purpose of the Gasa is restorative rather than punitive: repairing relationships, establishing fair compensation, and restoring communal harmony.
+              </p>
+            </div>
           </div>
         </div>
       </section>
