@@ -245,7 +245,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onNavigate }) => {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className={`w-full h-full object-cover ${item.id === 'hayu-address' ? 'object-top' : 'object-center'} group-hover:scale-105 transition-transform duration-500`}
                   loading="lazy"
                 />
                 <div className="absolute top-3 left-3 bg-stone-950/85 backdrop-blur-md px-3 py-1 rounded-full text-xs font-black text-amber-300 border border-amber-500/40">

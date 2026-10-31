@@ -43,7 +43,7 @@ export const GovernancePage: React.FC<GovernancePageProps> = ({ onNavigate }) =>
             <img
               src="/assets/aistudio/hayu_adddressing_67ed9fc2.png"
               alt="The Hayu addressing community assembly"
-              className="w-full h-auto object-cover"
+              className="w-full max-h-[520px] object-cover object-top"
             />
             <div className="bg-stone-900 text-stone-200 p-2.5 text-xs font-medium">
               <span className="font-black text-amber-400 block uppercase tracking-wide">Authentic Record</span>

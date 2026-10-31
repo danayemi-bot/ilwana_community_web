@@ -39,105 +39,103 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectGlossary
   ];
 
   return (
-    <div className="space-y-16 sm:space-y-24 pb-20 bg-[#fcfbf9]">
+    <div className="space-y-12 sm:space-y-20 pb-20 bg-[#fcfbf9]">
       {/* =========================================================================
-          GRAND HERO SECTION: Replicating web_landing_pg.png Composition Exactly
+          OPEN PANORAMIC HERO: River Tana Clear & Vivid, Words & Mothers Free from Boxes
           ========================================================================= */}
-      <section className="relative overflow-hidden bg-stone-950 text-white min-h-[620px] lg:min-h-[740px] flex flex-col justify-between">
+      <section className="relative overflow-hidden min-h-[580px] sm:min-h-[660px] lg:min-h-[720px] flex flex-col justify-between">
         
-        {/* Full-bleed Scenic River Tana Aerial Panorama */}
+        {/* Full Scenic River Tana Aerial Panorama - Vivid, Crisp & Clearly Visible */}
         <div className="absolute inset-0 z-0">
           <img
             src="/assets/aistudio/chaana_de7f7d77.png"
             alt="River Tana Meandering through Lush Tropical Forest"
-            className="w-full h-full object-cover object-center transform scale-102"
+            className="w-full h-full object-cover object-center"
           />
-          {/* Subtle natural sunlight gradient */}
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/90 via-emerald-950/60 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-stone-950/60 via-transparent to-black/20" />
+          {/* Gentle, non-blocking subtle darkening only behind text for crisp contrast */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
         </div>
 
-        {/* Hero Main Content Grid */}
-        <div className="relative z-10 max-w-[1440px] w-full mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-16 pb-12 sm:pb-20">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+        {/* Hero Content Grid - Floating Directly Over River Tana without enclosing boxes */}
+        <div className="relative z-10 max-w-[1440px] w-full mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-14 pb-8 sm:pb-14">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
             
-            {/* Left Column: Organic Deep Emerald Curved Panel */}
-            <div className="lg:col-span-7 xl:col-span-6 relative">
-              <div className="relative bg-gradient-to-br from-[#0c3f2d]/95 via-[#064e3b]/95 to-[#042017]/95 backdrop-blur-md p-6 sm:p-10 lg:p-12 rounded-3xl lg:rounded-[40px] border-2 border-emerald-500/40 shadow-2xl space-y-6">
-                
-                {/* Gold Diamond Geometric Badge: CHAANA DO KWEETO */}
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-[#d97706] text-stone-950 font-black text-xs sm:text-sm tracking-widest uppercase shadow-md border border-amber-300">
-                  <span className="text-stone-950 font-black">❖</span>
-                  <span>CHAANA DO KWEETO</span>
-                  <span className="text-stone-950 font-black">❖</span>
-                </div>
-
-                {/* Massive Hero Heading: Ilwana Community Heritage */}
-                <h1 className="font-serif font-black text-white text-4xl sm:text-6xl lg:text-7xl leading-[1.04] tracking-tight drop-shadow-md">
-                  Ilwana<br />
-                  Community<br />
-                  <span className="text-[#facc15] drop-shadow-sm">Heritage</span>
-                </h1>
-
-                {/* Tagline Bar with Vertical Gold Accent */}
-                <div className="border-l-4 border-amber-400 pl-4 py-1">
-                  <p className="font-serif italic text-stone-100 text-base sm:text-lg lg:text-xl font-medium leading-relaxed drop-shadow-xs">
-                    Preserving the History, Language, Culture, and Heritage of the Wailwana.
-                  </p>
-                </div>
-
-                {/* Hero Action Buttons */}
-                <div className="flex flex-wrap items-center gap-4 pt-2">
-                  <button
-                    onClick={() => onNavigate('history')}
-                    className="flex items-center gap-2 px-7 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-stone-950 font-black rounded-full text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all active:scale-95 border border-amber-300"
-                  >
-                    <BookOpen className="w-5 h-5" />
-                    <span>Explore Our Heritage →</span>
-                  </button>
-
-                  <button
-                    onClick={() => onNavigate('gallery')}
-                    className="flex items-center gap-2 px-6 py-4 bg-black/40 hover:bg-black/60 text-white font-bold rounded-full text-base sm:text-lg border-2 border-white/70 backdrop-blur-md transition-all active:scale-95 shadow-lg"
-                  >
-                    <PlayCircle className="w-5 h-5 text-amber-300" />
-                    <span>Watch Our Story</span>
-                  </button>
-                </div>
-
+            {/* Left Side: Unboxed, Clear Typography Directly on the River Scene */}
+            <div className="lg:col-span-7 xl:col-span-7 space-y-4 sm:space-y-6 text-left">
+              
+              {/* Gold Diamond Geometric Badge: CHAANA DO KWEETO */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#d97706] text-stone-950 font-black text-xs sm:text-sm tracking-widest uppercase shadow-lg border border-amber-300">
+                <span>❖</span>
+                <span>CHAANA DO KWEETO</span>
+                <span>❖</span>
               </div>
+
+              {/* Massive Hero Heading: Ilwana Community Heritage */}
+              <h1 className="font-serif font-black text-white text-4xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
+                Ilwana<br />
+                Community<br />
+                <span className="text-[#facc15] drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">Heritage</span>
+              </h1>
+
+              {/* Tagline Bar with Vertical Gold Accent - No Box */}
+              <div className="border-l-4 border-amber-400 pl-3.5 sm:pl-4 py-1 max-w-xl">
+                <p className="font-serif italic text-white text-base sm:text-lg lg:text-xl font-bold leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">
+                  Preserving the History, Language, Culture, and Heritage of the Wailwana.
+                </p>
+              </div>
+
+              {/* Action Buttons Directly on Scene */}
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-1 sm:pt-2">
+                <button
+                  onClick={() => onNavigate('history')}
+                  className="flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-[#f59e0b] hover:bg-[#d97706] text-stone-950 font-black rounded-full text-sm sm:text-base shadow-2xl transition-transform active:scale-95 border-2 border-amber-300 cursor-pointer"
+                >
+                  <BookOpen className="w-5 h-5" />
+                  <span>Explore Our Heritage →</span>
+                </button>
+
+                <button
+                  onClick={() => onNavigate('gallery')}
+                  className="flex items-center gap-2 px-5 sm:px-7 py-3 sm:py-4 bg-stone-950/75 hover:bg-stone-950/90 text-white font-bold rounded-full text-sm sm:text-base border-2 border-white/80 backdrop-blur-md transition-all active:scale-95 shadow-xl cursor-pointer"
+                >
+                  <PlayCircle className="w-5 h-5 text-amber-300" />
+                  <span>Watch Our Story</span>
+                </button>
+              </div>
+
             </div>
 
-            {/* Right Column: Strategic Placement of the Mothers with Woven Baskets */}
-            <div className="lg:col-span-5 xl:col-span-6 flex flex-col items-center lg:items-end justify-center">
-              <div className="relative max-w-lg w-full group">
+            {/* Right Side: Strategically Placed Mothers Overlooking River Tana - Free from clunky boxes */}
+            <div className="lg:col-span-5 xl:col-span-5 flex flex-col items-center lg:items-end justify-center pt-2 lg:pt-0">
+              <div className="relative max-w-md sm:max-w-lg w-full group">
                 
-                {/* Outer decorative glow & border */}
-                <div className="relative rounded-3xl overflow-hidden border-4 border-amber-400/80 shadow-2xl bg-stone-950">
+                {/* Natural, clean photo element overlooking the River Tana */}
+                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-white/60 bg-stone-900/40 backdrop-blur-2xs">
                   <img
                     src="/assets/aistudio/beutiful_ilwana_items_af972299.png"
                     alt="Wailwana mothers weaving traditional mats, trays and baskets"
-                    className="w-full h-[320px] sm:h-[400px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-56 sm:h-72 lg:h-84 object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   />
                   
                   {/* Subtle caption banner */}
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-950/90 via-stone-950/60 to-transparent p-4 sm:p-5 text-white">
-                    <span className="text-[11px] font-black uppercase tracking-wider bg-[#d97706] text-stone-950 px-2.5 py-0.5 rounded-full inline-block mb-1">
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-950/95 via-stone-950/60 to-transparent p-3 sm:p-4 text-white">
+                    <span className="text-[10px] sm:text-xs font-black uppercase tracking-wider bg-[#d97706] text-stone-950 px-2 py-0.5 rounded-full inline-block mb-1 shadow-sm">
                       Living Tradition
                     </span>
-                    <h3 className="font-serif font-black text-lg sm:text-xl text-white">
+                    <h3 className="font-serif font-black text-sm sm:text-base text-white drop-shadow-sm">
                       Wailwana Mothers & Craftswomen
                     </h3>
-                    <p className="text-xs sm:text-sm text-stone-200 font-medium">
-                      Plaiting dum palm fronds into traditional floor mats (Irraanga), winnowing trays (Jolo), and utility baskets (Kapwera).
+                    <p className="text-[11px] sm:text-xs text-stone-200 font-medium line-clamp-1 sm:line-clamp-2">
+                      Weaving traditional floor mats (Irraanga), winnowing trays (Jolo), and baskets (Kapwera) along River Tana.
                     </p>
                   </div>
                 </div>
 
-                {/* Floating River Tana Badge */}
-                <div className="absolute -top-4 -right-2 sm:-right-4 bg-white/95 backdrop-blur-md text-stone-950 border-2 border-[#14532d] px-4 py-2 rounded-2xl shadow-xl flex items-center gap-2">
-                  <Waves className="w-4 h-4 text-[#14532d]" />
-                  <span className="text-xs sm:text-sm font-black text-[#14532d]">
+                {/* Floating River Tana badge */}
+                <div className="absolute -top-3 -right-2 sm:-right-3 bg-white/95 backdrop-blur-md text-[#14532d] border border-stone-200 px-3 py-1 rounded-full shadow-lg flex items-center gap-1.5">
+                  <Waves className="w-3.5 h-3.5 text-[#14532d]" />
+                  <span className="text-xs font-black">
                     River Tana Basin
                   </span>
                 </div>
@@ -151,22 +149,22 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectGlossary
             BOTTOM CURVED WAVE RIBBON (Matching 6-Column Navigation in web_landing_pg)
             ========================================================================= */}
         <div className="relative z-20 bg-[#fcf8ec] text-stone-900 shadow-xl border-t-4 border-[#f59e0b]">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 divide-y md:divide-y-0 md:divide-x divide-stone-300 gap-y-3 md:gap-y-0">
+          <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 py-3 sm:py-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 divide-y sm:divide-y-0 sm:divide-x divide-stone-300 gap-y-2 sm:gap-y-0">
               
               {/* Item 1: Our History */}
               <button
                 onClick={() => onNavigate('history')}
-                className="flex items-center gap-3 px-3 py-2 text-left hover:bg-amber-100/60 rounded-xl transition-colors group cursor-pointer"
+                className="flex items-center gap-2.5 px-2.5 py-2 text-left hover:bg-amber-100/60 rounded-xl transition-colors group cursor-pointer"
               >
-                <div className="w-10 h-10 rounded-full bg-emerald-100 text-[#14532d] flex items-center justify-center shrink-0 group-hover:bg-[#14532d] group-hover:text-white transition-colors">
-                  <BookOpen className="w-5 h-5" />
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-emerald-100 text-[#14532d] flex items-center justify-center shrink-0 group-hover:bg-[#14532d] group-hover:text-white transition-colors">
+                  <BookOpen className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <span className="font-serif font-black text-sm sm:text-base text-stone-950 block leading-tight">
+                  <span className="font-serif font-black text-xs sm:text-base text-stone-950 block leading-tight">
                     Our History
                   </span>
-                  <span className="text-xs italic text-stone-600 block">
+                  <span className="text-[11px] sm:text-xs italic text-stone-600 block">
                     Know Our Past
                   </span>
                 </div>
@@ -175,16 +173,16 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectGlossary
               {/* Item 2: Our People */}
               <button
                 onClick={() => onNavigate('social')}
-                className="flex items-center gap-3 px-3 py-2 text-left hover:bg-amber-100/60 rounded-xl transition-colors group cursor-pointer"
+                className="flex items-center gap-2.5 px-2.5 py-2 text-left hover:bg-amber-100/60 rounded-xl transition-colors group cursor-pointer"
               >
-                <div className="w-10 h-10 rounded-full bg-emerald-100 text-[#14532d] flex items-center justify-center shrink-0 group-hover:bg-[#14532d] group-hover:text-white transition-colors">
-                  <Users className="w-5 h-5" />
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-emerald-100 text-[#14532d] flex items-center justify-center shrink-0 group-hover:bg-[#14532d] group-hover:text-white transition-colors">
+                  <Users className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <span className="font-serif font-black text-sm sm:text-base text-stone-950 block leading-tight">
+                  <span className="font-serif font-black text-xs sm:text-base text-stone-950 block leading-tight">
                     Our People
                   </span>
-                  <span className="text-xs italic text-stone-600 block">
+                  <span className="text-[11px] sm:text-xs italic text-stone-600 block">
                     Our Strength
                   </span>
                 </div>
@@ -193,16 +191,16 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectGlossary
               {/* Item 3: Our Culture */}
               <button
                 onClick={() => onNavigate('arts')}
-                className="flex items-center gap-3 px-3 py-2 text-left hover:bg-amber-100/60 rounded-xl transition-colors group cursor-pointer"
+                className="flex items-center gap-2.5 px-2.5 py-2 text-left hover:bg-amber-100/60 rounded-xl transition-colors group cursor-pointer"
               >
-                <div className="w-10 h-10 rounded-full bg-emerald-100 text-[#14532d] flex items-center justify-center shrink-0 group-hover:bg-[#14532d] group-hover:text-white transition-colors">
-                  <Music className="w-5 h-5" />
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-emerald-100 text-[#14532d] flex items-center justify-center shrink-0 group-hover:bg-[#14532d] group-hover:text-white transition-colors">
+                  <Music className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <span className="font-serif font-black text-sm sm:text-base text-stone-950 block leading-tight">
+                  <span className="font-serif font-black text-xs sm:text-base text-stone-950 block leading-tight">
                     Our Culture
                   </span>
-                  <span className="text-xs italic text-stone-600 block">
+                  <span className="text-[11px] sm:text-xs italic text-stone-600 block">
                     Our Pride
                   </span>
                 </div>
@@ -211,16 +209,16 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectGlossary
               {/* Item 4: Kilwana Language */}
               <button
                 onClick={() => onNavigate('language')}
-                className="flex items-center gap-3 px-3 py-2 text-left hover:bg-amber-100/60 rounded-xl transition-colors group cursor-pointer"
+                className="flex items-center gap-2.5 px-2.5 py-2 text-left hover:bg-amber-100/60 rounded-xl transition-colors group cursor-pointer"
               >
-                <div className="w-10 h-10 rounded-full bg-emerald-100 text-[#14532d] flex items-center justify-center shrink-0 group-hover:bg-[#14532d] group-hover:text-white transition-colors">
-                  <MessageCircle className="w-5 h-5" />
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-emerald-100 text-[#14532d] flex items-center justify-center shrink-0 group-hover:bg-[#14532d] group-hover:text-white transition-colors">
+                  <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <span className="font-serif font-black text-sm sm:text-base text-stone-950 block leading-tight">
+                  <span className="font-serif font-black text-xs sm:text-base text-stone-950 block leading-tight">
                     Kilwana Language
                   </span>
-                  <span className="text-xs italic text-stone-600 block">
+                  <span className="text-[11px] sm:text-xs italic text-stone-600 block">
                     Our Voice
                   </span>
                 </div>
@@ -229,16 +227,16 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectGlossary
               {/* Item 5: Our Faith */}
               <button
                 onClick={() => onNavigate('religion')}
-                className="flex items-center gap-3 px-3 py-2 text-left hover:bg-amber-100/60 rounded-xl transition-colors group cursor-pointer"
+                className="flex items-center gap-2.5 px-2.5 py-2 text-left hover:bg-amber-100/60 rounded-xl transition-colors group cursor-pointer"
               >
-                <div className="w-10 h-10 rounded-full bg-emerald-100 text-[#14532d] flex items-center justify-center shrink-0 group-hover:bg-[#14532d] group-hover:text-white transition-colors">
-                  <Building2 className="w-5 h-5" />
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-emerald-100 text-[#14532d] flex items-center justify-center shrink-0 group-hover:bg-[#14532d] group-hover:text-white transition-colors">
+                  <Building2 className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <span className="font-serif font-black text-sm sm:text-base text-stone-950 block leading-tight">
+                  <span className="font-serif font-black text-xs sm:text-base text-stone-950 block leading-tight">
                     Our Faith
                   </span>
-                  <span className="text-xs italic text-stone-600 block">
+                  <span className="text-[11px] sm:text-xs italic text-stone-600 block">
                     Our Belief
                   </span>
                 </div>
@@ -247,16 +245,16 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectGlossary
               {/* Item 6: Our Land */}
               <button
                 onClick={() => onNavigate('geography')}
-                className="flex items-center gap-3 px-3 py-2 text-left hover:bg-amber-100/60 rounded-xl transition-colors group cursor-pointer"
+                className="flex items-center gap-2.5 px-2.5 py-2 text-left hover:bg-amber-100/60 rounded-xl transition-colors group cursor-pointer"
               >
-                <div className="w-10 h-10 rounded-full bg-emerald-100 text-[#14532d] flex items-center justify-center shrink-0 group-hover:bg-[#14532d] group-hover:text-white transition-colors">
-                  <MapPin className="w-5 h-5" />
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-emerald-100 text-[#14532d] flex items-center justify-center shrink-0 group-hover:bg-[#14532d] group-hover:text-white transition-colors">
+                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <span className="font-serif font-black text-sm sm:text-base text-stone-950 block leading-tight">
+                  <span className="font-serif font-black text-xs sm:text-base text-stone-950 block leading-tight">
                     Our Land
                   </span>
-                  <span className="text-xs italic text-stone-600 block">
+                  <span className="text-[11px] sm:text-xs italic text-stone-600 block">
                     Our Home
                   </span>
                 </div>
@@ -284,7 +282,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectGlossary
           </div>
           <button
             onClick={() => onNavigate('gallery')}
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#14532d] hover:bg-[#1b4332] text-white font-black text-sm rounded-xl transition-all shadow-sm shrink-0"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#14532d] hover:bg-[#1b4332] text-white font-black text-sm rounded-xl transition-all shadow-sm shrink-0 cursor-pointer"
           >
             <span>View Complete Photo Gallery</span>
             <ArrowRight className="w-4 h-4" />
@@ -294,17 +292,17 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectGlossary
         {/* 4 Primary Showcases with user images */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           
-          {/* Card 1: The Hayu & Leadership */}
+          {/* Card 1: The Hayu & Leadership - FACE CLEARLY VISIBLE WITH OBJECT-TOP */}
           <div
             onClick={() => onNavigate('governance')}
             className="group cursor-pointer bg-white rounded-2xl border-2 border-stone-300 overflow-hidden hover:border-[#14532d] hover:shadow-xl transition-all flex flex-col justify-between"
           >
             <div>
-              <div className="relative h-52 overflow-hidden bg-stone-100">
+              <div className="relative h-64 sm:h-72 overflow-hidden bg-stone-900">
                 <img
                   src="/assets/aistudio/hayu_adddressing_67ed9fc2.png"
                   alt="The Hayu Addressing the Assembly"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
                 <span className="absolute top-3 left-3 bg-stone-950/90 text-amber-300 text-xs font-black px-3 py-1 rounded-full border border-amber-400">
                   Hayu (Traditional King)
@@ -316,7 +314,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectGlossary
                   The Hayu in Assembly
                 </h3>
                 <p className="text-sm text-stone-950 font-normal leading-relaxed">
-                  The traditional monarch addressing community members, embodying communal unity, moral authority, and reconciliation.
+                  The traditional monarch with royal embroidered cap addressing community members, embodying communal unity, moral authority, and reconciliation.
                 </p>
               </div>
             </div>
@@ -332,7 +330,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectGlossary
             className="group cursor-pointer bg-white rounded-2xl border-2 border-stone-300 overflow-hidden hover:border-[#14532d] hover:shadow-xl transition-all flex flex-col justify-between"
           >
             <div>
-              <div className="relative h-52 overflow-hidden bg-stone-100">
+              <div className="relative h-64 sm:h-72 overflow-hidden bg-stone-100">
                 <img
                   src="/assets/aistudio/wailwana_elders_8d71f49e.png"
                   alt="Wailwana Elders in Council"
@@ -364,7 +362,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectGlossary
             className="group cursor-pointer bg-white rounded-2xl border-2 border-stone-300 overflow-hidden hover:border-[#14532d] hover:shadow-xl transition-all flex flex-col justify-between"
           >
             <div>
-              <div className="relative h-52 overflow-hidden bg-stone-100">
+              <div className="relative h-64 sm:h-72 overflow-hidden bg-stone-100">
                 <img
                   src="/assets/aistudio/waato_d034ef5b.png"
                   alt="Traditional Dugout Canoe Waato"
@@ -396,7 +394,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectGlossary
             className="group cursor-pointer bg-white rounded-2xl border-2 border-stone-300 overflow-hidden hover:border-[#14532d] hover:shadow-xl transition-all flex flex-col justify-between"
           >
             <div>
-              <div className="relative h-52 overflow-hidden bg-stone-100">
+              <div className="relative h-64 sm:h-72 overflow-hidden bg-stone-100">
                 <img
                   src="/assets/aistudio/mwaato_f078a079.png"
                   alt="Mwaato Traditional Beehive"
@@ -781,7 +779,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectGlossary
             </div>
             <button
               onClick={() => onNavigate('glossary')}
-              className="px-5 py-2.5 bg-amber-400 hover:bg-amber-300 text-stone-950 font-black rounded-xl text-sm transition-all shadow-md shrink-0 flex items-center gap-1.5"
+              className="px-5 py-2.5 bg-amber-400 hover:bg-amber-300 text-stone-950 font-black rounded-xl text-sm transition-all shadow-md shrink-0 flex items-center gap-1.5 cursor-pointer"
             >
               <BookOpen className="w-4 h-4" />
               <span>Explore Complete Glossary</span>

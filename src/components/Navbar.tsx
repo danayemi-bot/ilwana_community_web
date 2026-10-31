@@ -63,121 +63,74 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenSe
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const navLinks = [
+    { id: 'home' as PageId, label: 'Home', icon: Home },
+    { id: 'history' as PageId, label: 'History', icon: BookOpen },
+    { id: 'social' as PageId, label: 'Our People', icon: Users },
+    { id: 'arts' as PageId, label: 'Culture', icon: Shield },
+    { id: 'language' as PageId, label: 'Language', icon: Book },
+    { id: 'gallery' as PageId, label: 'Gallery', icon: Camera },
+    { id: 'governance' as PageId, label: 'Governance', icon: Shield },
+    { id: 'glossary' as PageId, label: 'Glossary', icon: BookOpen },
+  ];
+
   return (
     <>
-      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200/80 shadow-xs">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-4 h-24 sm:h-28">
+      <header className="sticky top-0 z-40 bg-white/98 backdrop-blur-md border-b border-stone-200/90 shadow-xs">
+        {/* Main Header Row */}
+        <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between gap-3 sm:gap-6 h-20 sm:h-24">
             
             {/* Left Zone: Brand Logo & Typography directly matching web_landing_pg */}
             <button
               onClick={() => handleNavClick('home')}
-              className="flex items-center gap-3 sm:gap-4 text-left group shrink-0"
+              className="flex items-center gap-2.5 sm:gap-4 text-left group shrink-0 min-w-0"
               aria-label="Ilwana Community Heritage Homepage"
             >
               <img
                 src="/assets/aistudio/ilwana_logo_5e073fe7.png"
                 alt="Ilwana Community Heritage Emblem"
-                className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-full object-cover border-2 border-amber-500 shadow-md group-hover:scale-105 transition-transform shrink-0 bg-white"
+                className="w-14 h-14 sm:w-18 sm:h-18 lg:w-20 lg:h-20 rounded-full object-cover border-2 border-amber-500 shadow-md group-hover:scale-105 transition-transform shrink-0 bg-white"
               />
-              <div className="flex flex-col justify-center">
-                <span className="font-serif text-2xl sm:text-3xl lg:text-4xl font-black text-[#14532d] tracking-tight leading-none group-hover:text-[#064e3b] transition-colors">
+              <div className="flex flex-col justify-center min-w-0">
+                <span className="font-serif text-xl sm:text-2xl lg:text-3xl font-black text-[#14532d] tracking-tight leading-none group-hover:text-[#064e3b] transition-colors truncate">
                   ILWANA
                 </span>
-                <span className="font-sans text-xs sm:text-sm lg:text-base font-extrabold text-[#166534] tracking-wider uppercase mt-0.5">
+                <span className="font-sans text-[11px] sm:text-xs lg:text-sm font-black text-[#166534] tracking-wider uppercase mt-0.5 truncate">
                   COMMUNITY HERITAGE
                 </span>
-                <span className="text-[11px] sm:text-xs font-serif italic text-[#78350f] font-semibold tracking-normal mt-0.5 max-w-xs sm:max-w-md line-clamp-1">
+                <span className="text-[10px] sm:text-xs font-serif italic text-[#78350f] font-semibold tracking-normal mt-0.5 truncate max-w-[200px] sm:max-w-xs md:max-w-md">
                   Preserving the History, Language, Culture, and Heritage of the Wailwana.
                 </span>
               </div>
             </button>
 
-            {/* Right Zone: Floating Rounded Capsule Navbar Container */}
+            {/* Right Zone: Desktop Floating Capsule Navbar Container */}
             <div className="hidden xl:flex items-center">
-              <nav className="bg-white/95 rounded-full border border-stone-300 shadow-sm p-1.5 flex items-center gap-1">
-                {/* Home */}
-                <button
-                  onClick={() => handleNavClick('home')}
-                  className={`flex items-center gap-1.5 px-4 py-2 rounded-full font-bold text-sm transition-all ${
-                    activePage === 'home'
-                      ? 'bg-[#1b4332] text-white shadow-xs'
-                      : 'text-stone-800 hover:text-[#1b4332] hover:bg-stone-100'
-                  }`}
-                >
-                  <Home className="w-4 h-4" />
-                  <span>Home</span>
-                </button>
-
-                {/* History */}
-                <button
-                  onClick={() => handleNavClick('history')}
-                  className={`flex items-center gap-1.5 px-3.5 py-2 rounded-full font-bold text-sm transition-all ${
-                    activePage === 'history'
-                      ? 'bg-[#1b4332] text-white shadow-xs'
-                      : 'text-stone-800 hover:text-[#1b4332] hover:bg-stone-100'
-                  }`}
-                >
-                  <BookOpen className="w-4 h-4 text-stone-600" />
-                  <span>History</span>
-                </button>
-
-                {/* Our People (Social) */}
-                <button
-                  onClick={() => handleNavClick('social')}
-                  className={`flex items-center gap-1.5 px-3.5 py-2 rounded-full font-bold text-sm transition-all ${
-                    activePage === 'social'
-                      ? 'bg-[#1b4332] text-white shadow-xs'
-                      : 'text-stone-800 hover:text-[#1b4332] hover:bg-stone-100'
-                  }`}
-                >
-                  <Users className="w-4 h-4 text-stone-600" />
-                  <span>Our People</span>
-                </button>
-
-                {/* Culture (Arts) */}
-                <button
-                  onClick={() => handleNavClick('arts')}
-                  className={`flex items-center gap-1.5 px-3.5 py-2 rounded-full font-bold text-sm transition-all ${
-                    activePage === 'arts'
-                      ? 'bg-[#1b4332] text-white shadow-xs'
-                      : 'text-stone-800 hover:text-[#1b4332] hover:bg-stone-100'
-                  }`}
-                >
-                  <Shield className="w-4 h-4 text-stone-600" />
-                  <span>Culture</span>
-                </button>
-
-                {/* Language */}
-                <button
-                  onClick={() => handleNavClick('language')}
-                  className={`flex items-center gap-1.5 px-3.5 py-2 rounded-full font-bold text-sm transition-all ${
-                    activePage === 'language'
-                      ? 'bg-[#1b4332] text-white shadow-xs'
-                      : 'text-stone-800 hover:text-[#1b4332] hover:bg-stone-100'
-                  }`}
-                >
-                  <Book className="w-4 h-4 text-stone-600" />
-                  <span>Language</span>
-                </button>
-
-                {/* Gallery */}
-                <button
-                  onClick={() => handleNavClick('gallery')}
-                  className={`flex items-center gap-1.5 px-3.5 py-2 rounded-full font-bold text-sm transition-all ${
-                    activePage === 'gallery'
-                      ? 'bg-[#1b4332] text-white shadow-xs'
-                      : 'text-stone-800 hover:text-[#1b4332] hover:bg-stone-100'
-                  }`}
-                >
-                  <Camera className="w-4 h-4 text-stone-600" />
-                  <span>Gallery</span>
-                </button>
+              <nav className="bg-white rounded-full border border-stone-300 shadow-sm p-1.5 flex items-center gap-1">
+                {navLinks.slice(0, 6).map((item) => {
+                  const IconComp = item.icon;
+                  const isActive = activePage === item.id;
+                  return (
+                    <button
+                      key={item.id}
+                      onClick={() => handleNavClick(item.id)}
+                      className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full font-bold text-sm transition-all cursor-pointer ${
+                        isActive
+                          ? 'bg-[#1b4332] text-white shadow-xs'
+                          : 'text-stone-800 hover:text-[#1b4332] hover:bg-stone-100'
+                      }`}
+                    >
+                      <IconComp className={`w-4 h-4 ${isActive ? 'text-amber-300' : 'text-stone-600'}`} />
+                      <span>{item.label}</span>
+                    </button>
+                  );
+                })}
 
                 {/* More dropdown */}
                 <button
                   onClick={() => setMobileMenuOpen(true)}
-                  className="flex items-center gap-1 px-3 py-2 rounded-full text-stone-800 hover:text-[#1b4332] hover:bg-stone-100 font-bold text-sm transition-colors"
+                  className="flex items-center gap-1 px-3 py-1.5 rounded-full text-stone-800 hover:text-[#1b4332] hover:bg-stone-100 font-bold text-sm transition-colors cursor-pointer"
                 >
                   <span>More</span>
                   <ChevronDown className="w-4 h-4 text-stone-500" />
@@ -187,7 +140,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenSe
                 {onOpenSearch && (
                   <button
                     onClick={onOpenSearch}
-                    className="p-2 rounded-full hover:bg-stone-100 text-stone-700 hover:text-[#1b4332] transition-colors ml-1"
+                    className="p-2 rounded-full hover:bg-stone-100 text-stone-700 hover:text-[#1b4332] transition-colors ml-1 cursor-pointer"
                     title="Search Archive (Ctrl+K)"
                     aria-label="Search Heritage Content"
                   >
@@ -197,12 +150,12 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenSe
               </nav>
             </div>
 
-            {/* Mobile / Tablet Menu Button */}
-            <div className="flex xl:hidden items-center gap-2">
+            {/* Mobile / Tablet Quick Controls */}
+            <div className="flex xl:hidden items-center gap-2 shrink-0">
               {onOpenSearch && (
                 <button
                   onClick={onOpenSearch}
-                  className="p-2.5 text-stone-800 hover:text-[#14532d] hover:bg-stone-100 rounded-full border border-stone-300"
+                  className="p-2 text-stone-800 hover:text-[#14532d] hover:bg-stone-100 rounded-full border border-stone-300 cursor-pointer"
                   aria-label="Search"
                 >
                   <Search className="w-5 h-5" />
@@ -210,13 +163,45 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenSe
               )}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2.5 bg-stone-900 text-white rounded-xl shadow-sm hover:bg-[#1b4332] transition-colors"
+                className="p-2.5 bg-[#1b4332] text-white rounded-xl shadow-sm hover:bg-[#14532d] transition-colors cursor-pointer flex items-center gap-1"
                 aria-label="Open Navigation"
               >
-                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                <span className="text-xs font-bold hidden sm:inline">Menu</span>
               </button>
             </div>
 
+          </div>
+        </div>
+
+        {/* ALWAYS-VISIBLE MOBILE & TABLET HORIZONTAL SCROLL NAV BAR */}
+        <div className="xl:hidden border-t border-stone-200 bg-stone-50/95 backdrop-blur-md px-2 py-1.5 shadow-inner">
+          <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar scroll-smooth px-1">
+            {navLinks.map((item) => {
+              const IconComp = item.icon;
+              const isActive = activePage === item.id;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => handleNavClick(item.id)}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap shrink-0 transition-all cursor-pointer ${
+                    isActive
+                      ? 'bg-[#1b4332] text-white shadow-xs'
+                      : 'bg-white text-stone-800 hover:bg-stone-200 border border-stone-200'
+                  }`}
+                >
+                  <IconComp className={`w-3.5 h-3.5 ${isActive ? 'text-amber-300' : 'text-stone-600'}`} />
+                  <span>{item.label}</span>
+                </button>
+              );
+            })}
+            <button
+              onClick={() => setMobileMenuOpen(true)}
+              className="flex items-center gap-1 px-3 py-1.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap shrink-0 bg-amber-100 text-amber-950 border border-amber-300 cursor-pointer"
+            >
+              <span>All 13</span>
+              <ChevronDown className="w-3.5 h-3.5" />
+            </button>
           </div>
         </div>
       </header>
@@ -238,10 +223,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenSe
                   <img
                     src="/assets/aistudio/ilwana_logo_5e073fe7.png"
                     alt="Ilwana Logo"
-                    className="w-16 h-16 rounded-full object-cover border-2 border-amber-500 shadow-sm"
+                    className="w-14 h-14 rounded-full object-cover border-2 border-amber-500 shadow-sm"
                   />
                   <div>
-                    <h2 className="font-serif text-xl font-black text-[#14532d] leading-tight">
+                    <h2 className="font-serif text-lg sm:text-xl font-black text-[#14532d] leading-tight">
                       ILWANA HERITAGE
                     </h2>
                     <p className="text-xs font-bold text-amber-700 mt-0.5">
@@ -251,7 +236,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenSe
                 </div>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 text-stone-800 hover:bg-stone-100 rounded-xl border border-stone-300"
+                  className="p-2 text-stone-800 hover:bg-stone-100 rounded-xl border border-stone-300 cursor-pointer"
                 >
                   <X className="w-6 h-6" />
                 </button>
@@ -266,7 +251,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenSe
                     <button
                       key={sec.id}
                       onClick={() => handleNavClick(sec.id)}
-                      className={`w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-left transition-all ${
+                      className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-left transition-all cursor-pointer ${
                         isActive
                           ? 'bg-[#1b4332] text-white font-black shadow-md'
                           : 'text-stone-950 hover:bg-stone-200/80 border border-stone-200 font-bold bg-white'
@@ -274,7 +259,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenSe
                     >
                       <div className="flex items-center gap-3">
                         <IconComp className={`w-5 h-5 ${isActive ? 'text-amber-300' : 'text-stone-600'}`} />
-                        <span className="text-base font-black tracking-tight">{sec.label}</span>
+                        <span className="text-sm sm:text-base font-black tracking-tight">{sec.label}</span>
                       </div>
                       <span className={`text-xs font-mono font-bold ${isActive ? 'text-amber-300' : 'text-stone-500'}`}>
                         {sec.number}
