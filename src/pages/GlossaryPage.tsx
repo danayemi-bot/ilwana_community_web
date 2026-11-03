@@ -1,16 +1,10 @@
-import React, { useState, useMemo, useEffect } from 'react';
-import { GLOSSARY_DATA, GlossaryEntry, TermCategory, VerificationStatus } from '../data/glossaryData';
+import React, { useState, useMemo } from 'react';
+import { GLOSSARY_DATA, GlossaryEntry, TermCategory } from '../data/glossaryData';
 import { PageId } from '../components/Navbar';
 import {
   BookOpen,
   Search,
-  Filter,
-  CheckCircle2,
-  AlertCircle,
-  Volume2,
   RotateCcw,
-  Sparkles,
-  Layers,
   ArrowRight
 } from 'lucide-react';
 

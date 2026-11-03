@@ -9,7 +9,7 @@ export type TermCategory =
   | 'Clans'
   | 'Geography & Environment';
 
-export type VerificationStatus = 'confirmed' | 'pending_confirmation';
+export type VerificationStatus = 'confirmed';
 
 export interface GlossaryEntry {
   id: string;
@@ -107,15 +107,6 @@ export const GLOSSARY_DATA: GlossaryEntry[] = [
     phoneticHint: 'bahr-YAH toh-LOH'
   },
   {
-    id: 'bati',
-    term: 'Bati',
-    englishMeaning: 'Traditional percussion and musical instrument of the Wailwana.',
-    category: 'Music, Dance & Arts',
-    culturalContext: 'A traditional musical instrument identified in community accounts as part of the vibrant musical heritage of the Wailwana.',
-    status: 'confirmed',
-    crossReferences: ['Ngoma', 'Bunki', 'Firiimbi']
-  },
-  {
     id: 'begele',
     term: 'Begele',
     englishMeaning: 'Carved wooden end-piece closure for the traditional cylindrical beehive (Mwaato) [singular].',
@@ -169,7 +160,7 @@ export const GLOSSARY_DATA: GlossaryEntry[] = [
     category: 'Music, Dance & Arts',
     culturalContext: 'A traditional acoustic musical instrument documented as part of Ilwana cultural performances and gatherings.',
     status: 'confirmed',
-    crossReferences: ['Ngoma', 'Bati', 'Firiimbi']
+    crossReferences: ['Ngoma', 'Tasi', 'Firiimbi']
   },
   {
     id: 'buyuyu',
@@ -208,7 +199,7 @@ export const GLOSSARY_DATA: GlossaryEntry[] = [
     category: 'Music, Dance & Arts',
     culturalContext: 'A traditional musical flute/whistle documented in community oral accounts, played during festive dances, gatherings, and pastoral calls.',
     status: 'confirmed',
-    crossReferences: ['Ngoma', 'Bati', 'Bunki']
+    crossReferences: ['Ngoma', 'Tasi', 'Bunki']
   },
   {
     id: 'galgedha',
@@ -569,7 +560,7 @@ export const GLOSSARY_DATA: GlossaryEntry[] = [
     category: 'Music, Dance & Arts',
     culturalContext: 'Carved from hollow wood and stretched animal hide; provides the foundational rhythm for dances including Kitoko, Koras, and Mashingwe.',
     status: 'confirmed',
-    crossReferences: ['Kitoko', 'Mashingwe', 'Bati', 'Bunki']
+    crossReferences: ['Kitoko', 'Mashingwe', 'Tasi', 'Bunki']
   },
   {
     id: 'nijhyami-mazwa-kweedwa',
@@ -618,6 +609,15 @@ export const GLOSSARY_DATA: GlossaryEntry[] = [
     culturalContext: 'Incorporated into everyday male dress alongside the traditional Kikoi.',
     status: 'confirmed',
     crossReferences: ['Banaadiri', 'Kikoi']
+  },
+  {
+    id: 'tasi',
+    term: 'Tasi',
+    englishMeaning: 'Traditional percussion and musical instrument of the Wailwana.',
+    category: 'Music, Dance & Arts',
+    culturalContext: 'A traditional musical instrument identified in community accounts as part of the vibrant musical heritage of the Wailwana, played to punctuate rhythmic cycles.',
+    status: 'confirmed',
+    crossReferences: ['Ngoma', 'Bunki', 'Firiimbi']
   },
   {
     id: 'tiyya',

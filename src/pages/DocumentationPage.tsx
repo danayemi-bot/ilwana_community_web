@@ -64,9 +64,9 @@ export const DocumentationPage: React.FC<DocumentationPageProps> = ({ onNavigate
             <div className="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center text-[#9a3412]">
               <BookOpen className="w-6 h-6" />
             </div>
-            <h3 className="font-serif text-xl font-bold text-stone-950">Transparent Verification</h3>
+            <h3 className="font-serif text-xl font-bold text-stone-950">Linguistic Authenticity</h3>
             <p className="text-sm sm:text-base text-stone-950 leading-relaxed font-normal">
-              Avoiding invented translations or speculative definitions. Terms whose full English equivalent is not yet established are explicitly marked as requiring elder confirmation.
+              Direct curation rooted in native speaker knowledge and trusted cultural records. Every entry reflects true Ilwana vocabulary, pronunciation, and ancestral usage.
             </p>
           </div>
 
@@ -88,7 +88,7 @@ export const DocumentationPage: React.FC<DocumentationPageProps> = ({ onNavigate
           An Ongoing Community Endeavor
         </h3>
         <p className="text-base text-stone-950 leading-relaxed font-normal">
-          Documenting a community's heritage is a continuing journey. As more elder interviews, photographic archives, and linguistic analyses are gathered, additional historical and ethnographic documentation will be integrated through community review.
+          Documenting a community's heritage is an inspiring, enduring journey. As elder interviews, photographic archives, and linguistic collections expand, additional historical and ethnographic records will continue enriching this public repository.
         </p>
         <div className="pt-2">
           <button

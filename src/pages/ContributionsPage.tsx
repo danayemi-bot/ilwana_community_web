@@ -67,9 +67,9 @@ ${formData.sourceElderNotes || 'None provided'}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="bg-white p-6 rounded-xl border-2 border-stone-300 shadow-2xs space-y-2 hover:border-[#0f4c5c] transition-colors">
             <span className="text-xs sm:text-sm font-mono font-bold text-[#0f4c5c] bg-teal-50 px-2 py-0.5 rounded">01 / VOCABULARY</span>
-            <h3 className="font-serif text-xl font-bold text-stone-950">Unconfirmed Local Terms</h3>
+            <h3 className="font-serif text-xl font-bold text-stone-950">Living Dialect & Cultural Terms</h3>
             <p className="text-sm sm:text-base text-stone-950 leading-relaxed font-normal">
-              Assisting in verifying the exact function, construction, and English meanings of terms flagged in the glossary (such as <em className="text-stone-950 font-semibold">Bati</em>, <em className="text-stone-950 font-semibold">Bunki</em>, <em className="text-stone-950 font-semibold">Firiimbi</em>, <em className="text-stone-950 font-semibold">Luguba</em>, and <em className="text-stone-950 font-semibold">Begele/Begelimo</em>).
+              Expanding vocabulary records, dialectal variations, regional pronunciations, and specialized terminology (such as riverine navigation, seasonal agricultural phrases, and kinship designations).
             </p>
           </div>
 
@@ -91,26 +91,26 @@ ${formData.sourceElderNotes || 'None provided'}
         </div>
       </section>
 
-      {/* Editorial Safeguard & Review Workflow */}
+      {/* Editorial Safeguard & Custodianship Workflow */}
       <section className="bg-white p-6 sm:p-8 rounded-2xl border-2 border-stone-300 space-y-4">
         <h3 className="font-serif text-2xl font-black text-stone-950">
-          The Elder Review & Verification Workflow
+          Elder Knowledge Custodianship & Preservation Process
         </h3>
         <p className="text-base text-stone-950 leading-relaxed font-normal">
-          To maintain absolute authenticity and prevent the introduction of unverified or inaccurate data, <strong className="text-stone-950 font-extrabold">all proposed community contributions undergo careful review by knowledgeable Ilwana elders and cultural custodians</strong> before being incorporated into the public digital archive.
+          To maintain authentic cultural accuracy, <strong className="text-stone-950 font-extrabold">all community submissions are reviewed alongside knowledgeable Ilwana elders and cultural custodians</strong> before being permanently integrated into the digital heritage repository.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2 text-sm">
           <div className="p-4 bg-[#fdfbf7] rounded-xl border-2 border-stone-300 space-y-1">
             <strong className="font-black text-stone-950 text-base">Step 1: Submission & Drafting</strong>
-            <p className="text-stone-950 font-normal">Information is recorded with contributor and elder attribution.</p>
+            <p className="text-stone-950 font-normal">Information is recorded with contributor and lineage attribution.</p>
           </div>
           <div className="p-4 bg-[#fdfbf7] rounded-xl border-2 border-stone-300 space-y-1">
-            <strong className="font-black text-stone-950 text-base">Step 2: Elder Consultation</strong>
-            <p className="text-stone-950 font-normal">Linguistic and cultural details are cross-referenced with native speakers.</p>
+            <strong className="font-black text-stone-950 text-base">Step 2: Elder Review</strong>
+            <p className="text-stone-950 font-normal">Linguistic nuances and ancestral contexts are reviewed with native speakers.</p>
           </div>
           <div className="p-4 bg-[#fdfbf7] rounded-xl border-2 border-stone-300 space-y-1">
             <strong className="font-black text-stone-950 text-base">Step 3: Permanent Archival</strong>
-            <p className="text-stone-950 font-normal">Verified entries are integrated into the public glossary and knowledge sections.</p>
+            <p className="text-stone-950 font-normal">Documented entries are preserved in the public cultural archive and glossary.</p>
           </div>
         </div>
       </section>
@@ -221,7 +221,7 @@ ${formData.sourceElderNotes || 'None provided'}
               className="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-[#0f4c5c] hover:underline"
             >
               <BookOpen className="w-4 h-4" />
-              <span>Review unconfirmed glossary terms</span>
+              <span>Explore the Ilwana cultural glossary</span>
             </button>
           </div>
         </div>

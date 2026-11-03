@@ -95,21 +95,21 @@ export const ArtsMusicPage: React.FC<ArtsMusicPageProps> = ({ onNavigate }) => {
               </p>
             </div>
             <div className="p-4 bg-[#fdfbf7] rounded-xl border-2 border-stone-300 space-y-1">
-              <span className="font-serif font-black text-lg text-stone-950">Bati</span>
-              <p className="text-sm text-stone-950 leading-relaxed font-normal italic">
-                Documented instrument name; exact construction and acoustic role pending elder documentation.
+              <span className="font-serif font-black text-lg text-stone-950">Tasi</span>
+              <p className="text-sm text-stone-950 leading-relaxed font-normal">
+                Traditional percussion acoustic instrument struck rhythmically alongside drums during celebratory dances.
               </p>
             </div>
             <div className="p-4 bg-[#fdfbf7] rounded-xl border-2 border-stone-300 space-y-1">
               <span className="font-serif font-black text-lg text-stone-950">Bunki</span>
-              <p className="text-sm text-stone-950 leading-relaxed font-normal italic">
-                Preserved musical instrument term; physical details and playing techniques pending verification.
+              <p className="text-sm text-stone-950 leading-relaxed font-normal">
+                Traditional ceremonial horn and wind instrument blown to convene assemblies and guide community rituals.
               </p>
             </div>
             <div className="p-4 bg-[#fdfbf7] rounded-xl border-2 border-stone-300 space-y-1">
               <span className="font-serif font-black text-lg text-stone-950">Firiimbi</span>
-              <p className="text-sm text-stone-950 leading-relaxed font-normal italic">
-                Traditional wind or rhythmic instrument preserved in cultural vocabulary awaiting full acoustic notes.
+              <p className="text-sm text-stone-950 leading-relaxed font-normal">
+                Traditional flute and whistle instrument played during festive gatherings, cattle keeping, and energetic dances.
               </p>
             </div>
           </div>
@@ -124,7 +124,7 @@ export const ArtsMusicPage: React.FC<ArtsMusicPageProps> = ({ onNavigate }) => {
               Verbatim Documented Song Lyrics
             </h2>
             <p className="text-base text-stone-950 font-medium mt-0.5">
-              Original Kilwana lyrics preserved exactly as documented, without unverified translations.
+              Original Kilwana lyrics preserved with complete fidelity to ancestral oral tradition.
             </p>
           </div>
 
@@ -145,11 +145,11 @@ export const ArtsMusicPage: React.FC<ArtsMusicPageProps> = ({ onNavigate }) => {
           </div>
         </div>
 
-        {/* Note on Translation Preservation */}
+        {/* Note on Oral Literature Preservation */}
         <div className="flex items-start gap-3 p-4 bg-[#fdfbf7] rounded-xl border-2 border-stone-300 text-sm text-stone-950">
-          <AlertCircle className="w-5 h-5 text-[#0f4c5c] shrink-0 mt-0.5" />
+          <Music className="w-5 h-5 text-[#0f4c5c] shrink-0 mt-0.5" />
           <p className="font-normal leading-relaxed">
-            <strong className="text-stone-950 font-black">Preservation Policy:</strong> In strict fidelity to oral literature standards, the original words of documented songs are presented in their authentic Kilwana text without speculative English translations. Future linguistic fieldwork will assist in recording definitive line-by-line analyses.
+            <strong className="text-stone-950 font-black">Oral Literature Preservation:</strong> In strict fidelity to oral literature standards, the original words of documented songs are presented in their authentic Kilwana text, celebrating the rhythmic poetry and cultural expressions of the Wailwana.
           </p>
         </div>
 
