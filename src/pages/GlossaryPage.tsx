@@ -27,7 +27,6 @@ export const GlossaryPage: React.FC<GlossaryPageProps> = ({
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
-  const [statusFilter, setStatusFilter] = useState<string>('All');
   const [selectedLetter, setSelectedLetter] = useState<string>('All');
 
   // Categories list
@@ -77,18 +76,14 @@ export const GlossaryPage: React.FC<GlossaryPageProps> = ({
       const matchesCategory =
         selectedCategory === 'All' || entry.category === selectedCategory;
 
-      // Status match
-      const matchesStatus =
-        statusFilter === 'All' || entry.status === statusFilter;
-
       // Letter match
       const firstChar = entry.term.charAt(0).toUpperCase();
       const matchesLetter =
         selectedLetter === 'All' || firstChar === selectedLetter;
 
-      return matchesSearch && matchesCategory && matchesStatus && matchesLetter;
+      return matchesSearch && matchesCategory && matchesLetter;
     }).sort((a, b) => a.term.localeCompare(b.term));
-  }, [searchQuery, selectedCategory, statusFilter, selectedLetter, selectedTermId]);
+  }, [searchQuery, selectedCategory, selectedLetter, selectedTermId]);
 
   // Group by alphabetical letters
   const groupedEntries = useMemo(() => {
@@ -104,35 +99,34 @@ export const GlossaryPage: React.FC<GlossaryPageProps> = ({
   const handleResetFilters = () => {
     setSearchQuery('');
     setSelectedCategory('All');
-    setStatusFilter('All');
     setSelectedLetter('All');
     if (onClearSelectedTerm) onClearSelectedTerm();
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
       {/* Header */}
       <div className="space-y-4 border-b border-stone-200 pb-8">
-        <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#0f4c5c]">
+        <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#14532d]">
           <BookOpen className="w-4 h-4" />
           <span>Section 10 · Compulsory Heritage Reference</span>
         </div>
-        <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-stone-900">
+        <h1 className="font-serif text-3xl sm:text-5xl font-black tracking-tight text-stone-900">
           Glossary of Kilwana Words & Cultural Terms
         </h1>
-        <p className="text-base sm:text-lg text-stone-600 leading-relaxed max-w-3xl">
+        <p className="text-base sm:text-lg text-stone-700 leading-relaxed max-w-3xl font-medium">
           An authoritative reference containing the local-language terminology, clan titles, leadership offices, material implements, traditional foods, and cultural concepts documented from the Ilwana Community.
         </p>
       </div>
 
-      {/* Accuracy & Curatorial Note */}
-      <div className="bg-stone-50 border border-stone-200 rounded-xl p-5 text-xs text-stone-600 leading-relaxed space-y-2">
-        <div className="flex items-center gap-2 font-semibold text-stone-900">
-          <AlertCircle className="w-4 h-4 text-[#0f4c5c]" />
-          <span>Linguistic Accuracy & Verification Standard</span>
+      {/* Authoritative Heritage Note */}
+      <div className="bg-[#fdfbf7] border-2 border-stone-200 rounded-xl p-5 text-sm text-stone-900 leading-relaxed space-y-1.5 shadow-2xs">
+        <div className="flex items-center gap-2 font-black text-[#14532d]">
+          <BookOpen className="w-4 h-4 text-[#14532d]" />
+          <span>Comprehensive Ilwana Linguistic Archive</span>
         </div>
-        <p>
-          In accordance with community preservation standards, this glossary presents verified English meanings and cultural context where established by community knowledge. Where a term lacks a verified English translation, it is explicitly annotated with <em>"English meaning not yet confirmed"</em> to safeguard linguistic integrity and avoid speculative translations. This glossary also serves as the reference appendix following the documentation of Ilwana life and culture.
+        <p className="font-medium text-stone-800">
+          This authoritative glossary compiles documented Kilwana vocabulary, traditional titles, implements, natural environment terms, and kinship structures, preserving the authentic spoken heritage of the Wailwana for current and future generations.
         </p>
       </div>
 
@@ -179,57 +173,18 @@ export const GlossaryPage: React.FC<GlossaryPageProps> = ({
           </div>
         </div>
 
-        {/* Verification Status & Letter Row */}
-        <div className="pt-2 border-t border-stone-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          {/* Verification Status */}
-          <div className="flex items-center gap-2">
-            <span className="text-xs text-stone-500 font-medium">Status:</span>
-            <div className="flex items-center gap-1">
-              <button
-                onClick={() => setStatusFilter('All')}
-                className={`px-2.5 py-1 text-xs rounded-md transition-colors ${
-                  statusFilter === 'All'
-                    ? 'bg-stone-900 text-white font-medium'
-                    : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
-                }`}
-              >
-                All
-              </button>
-              <button
-                onClick={() => setStatusFilter('confirmed')}
-                className={`px-2.5 py-1 text-xs rounded-md transition-colors flex items-center gap-1 ${
-                  statusFilter === 'confirmed'
-                    ? 'bg-emerald-800 text-white font-medium'
-                    : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
-                }`}
-              >
-                <CheckCircle2 className="w-3 h-3 text-emerald-300" />
-                <span>Verified</span>
-              </button>
-              <button
-                onClick={() => setStatusFilter('pending_confirmation')}
-                className={`px-2.5 py-1 text-xs rounded-md transition-colors flex items-center gap-1 ${
-                  statusFilter === 'pending_confirmation'
-                    ? 'bg-amber-800 text-white font-medium'
-                    : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
-                }`}
-              >
-                <AlertCircle className="w-3 h-3 text-amber-300" />
-                <span>Pending Elder Review</span>
-              </button>
-            </div>
-          </div>
-
-          {/* Reset button */}
-          {(searchQuery || selectedCategory !== 'All' || statusFilter !== 'All' || selectedLetter !== 'All' || selectedTermId) && (
+        {/* Filter Controls Row */}
+        {/* Filter Reset Button if active */}
+        {(searchQuery || selectedCategory !== 'All' || selectedLetter !== 'All' || selectedTermId) && (
+          <div className="pt-2 border-t border-stone-100 flex justify-end">
             <button
               onClick={handleResetFilters}
-              className="text-xs text-[#9a3412] hover:underline flex items-center gap-1 font-medium self-start sm:self-auto"
+              className="text-xs text-[#9a3412] hover:underline flex items-center gap-1 font-bold cursor-pointer"
             >
-              <RotateCcw className="w-3.5 h-3.5" /> Reset all filters
+              <RotateCcw className="w-3.5 h-3.5" /> Reset active filters
             </button>
-          )}
-        </div>
+          </div>
+        )}
 
         {/* A-Z Alphabetical Jump Rail */}
         <div className="pt-3 border-t border-stone-100 flex flex-wrap items-center gap-1">
@@ -323,19 +278,10 @@ export const GlossaryPage: React.FC<GlossaryPageProps> = ({
                           )}
                         </div>
 
-                        <div className="flex flex-col items-end gap-1.5">
-                          <span className="text-xs font-mono uppercase font-bold px-2.5 py-1 bg-stone-100 text-stone-900 rounded border border-stone-200">
+                        <div className="flex flex-col items-end gap-1.5 shrink-0">
+                          <span className="text-xs font-mono uppercase font-bold px-2.5 py-1 bg-stone-100 text-stone-900 rounded-md border border-stone-200 shadow-2xs">
                             {entry.category}
                           </span>
-                          {entry.status === 'pending_confirmation' ? (
-                            <span className="text-xs font-bold text-amber-900 bg-amber-100 px-2.5 py-1 border border-amber-300 rounded">
-                              Pending Elder Review
-                            </span>
-                          ) : (
-                            <span className="text-xs font-bold text-emerald-950 bg-emerald-100 px-2.5 py-1 border border-emerald-300 rounded flex items-center gap-1">
-                              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700" /> Confirmed
-                            </span>
-                          )}
                         </div>
                       </div>
 

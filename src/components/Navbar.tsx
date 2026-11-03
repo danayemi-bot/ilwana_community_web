@@ -79,31 +79,43 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenSe
       <header className="sticky top-0 z-40 bg-white/98 backdrop-blur-md border-b border-stone-200/90 shadow-xs">
         {/* Main Header Row */}
         <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-3 sm:gap-6 h-20 sm:h-24">
+          <div className="flex items-center justify-between gap-2 sm:gap-6 h-20 sm:h-24">
             
-            {/* Left Zone: Brand Logo & Typography directly matching web_landing_pg */}
-            <button
-              onClick={() => handleNavClick('home')}
-              className="flex items-center gap-2.5 sm:gap-4 text-left group shrink-0 min-w-0"
-              aria-label="Ilwana Community Heritage Homepage"
-            >
-              <img
-                src="/assets/aistudio/ilwana_logo_5e073fe7.png"
-                alt="Ilwana Community Heritage Emblem"
-                className="w-14 h-14 sm:w-18 sm:h-18 lg:w-20 lg:h-20 rounded-full object-cover border-2 border-amber-500 shadow-md group-hover:scale-105 transition-transform shrink-0 bg-white"
-              />
-              <div className="flex flex-col justify-center min-w-0">
-                <span className="font-serif text-xl sm:text-2xl lg:text-3xl font-black text-[#14532d] tracking-tight leading-none group-hover:text-[#064e3b] transition-colors truncate">
-                  ILWANA
-                </span>
-                <span className="font-sans text-[11px] sm:text-xs lg:text-sm font-black text-[#166534] tracking-wider uppercase mt-0.5 truncate">
-                  COMMUNITY HERITAGE
-                </span>
-                <span className="text-[10px] sm:text-xs font-serif italic text-[#78350f] font-semibold tracking-normal mt-0.5 truncate max-w-[200px] sm:max-w-xs md:max-w-md">
-                  Preserving the History, Language, Culture, and Heritage of the Wailwana.
-                </span>
-              </div>
-            </button>
+            {/* Left Zone: Mobile Menu Button (on the left) + Brand Logo & Typography */}
+            <div className="flex items-center gap-2 sm:gap-3.5 min-w-0">
+              {/* Mobile Menu Button - Positioned on the LEFT */}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="xl:hidden p-2.5 bg-[#1b4332] text-white rounded-xl shadow-sm hover:bg-[#14532d] transition-colors cursor-pointer flex items-center gap-1.5 shrink-0"
+                aria-label="Open Navigation Menu"
+              >
+                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                <span className="text-xs font-bold hidden sm:inline">Menu</span>
+              </button>
+
+              <button
+                onClick={() => handleNavClick('home')}
+                className="flex items-center gap-2 sm:gap-3.5 text-left group shrink-0 min-w-0"
+                aria-label="Ilwana Community Heritage Homepage"
+              >
+                <img
+                  src="/assets/aistudio/ilwana_logo_5e073fe7.png"
+                  alt="Ilwana Community Heritage Emblem"
+                  className="w-14 h-14 sm:w-18 sm:h-18 lg:w-20 lg:h-20 rounded-full object-cover border-2 border-amber-500 shadow-md group-hover:scale-105 transition-transform shrink-0 bg-white"
+                />
+                <div className="flex flex-col justify-center min-w-0">
+                  <span className="font-serif text-lg sm:text-2xl lg:text-3xl font-black text-[#14532d] tracking-tight leading-none group-hover:text-[#064e3b] transition-colors truncate">
+                    ILWANA
+                  </span>
+                  <span className="font-sans text-[10px] sm:text-xs lg:text-sm font-black text-[#166534] tracking-wider uppercase mt-0.5 truncate">
+                    COMMUNITY HERITAGE
+                  </span>
+                  <span className="text-[9.5px] sm:text-xs font-serif italic text-[#78350f] font-semibold tracking-normal mt-0.5 truncate max-w-[160px] sm:max-w-xs md:max-w-md">
+                    Preserving the History, Language, Culture, and Heritage of the Wailwana.
+                  </span>
+                </div>
+              </button>
+            </div>
 
             {/* Right Zone: Desktop Floating Capsule Navbar Container */}
             <div className="hidden xl:flex items-center">
@@ -150,25 +162,17 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenSe
               </nav>
             </div>
 
-            {/* Mobile / Tablet Quick Controls */}
+            {/* Mobile / Tablet Quick Search on Right */}
             <div className="flex xl:hidden items-center gap-2 shrink-0">
               {onOpenSearch && (
                 <button
                   onClick={onOpenSearch}
-                  className="p-2 text-stone-800 hover:text-[#14532d] hover:bg-stone-100 rounded-full border border-stone-300 cursor-pointer"
+                  className="p-2.5 text-stone-800 hover:text-[#14532d] hover:bg-stone-100 rounded-full border border-stone-300 cursor-pointer shadow-2xs"
                   aria-label="Search"
                 >
                   <Search className="w-5 h-5" />
                 </button>
               )}
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2.5 bg-[#1b4332] text-white rounded-xl shadow-sm hover:bg-[#14532d] transition-colors cursor-pointer flex items-center gap-1"
-                aria-label="Open Navigation"
-              >
-                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-                <span className="text-xs font-bold hidden sm:inline">Menu</span>
-              </button>
             </div>
 
           </div>
@@ -215,8 +219,8 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenSe
             aria-hidden="true"
           />
 
-          <div className="fixed inset-y-0 right-0 max-w-full flex pl-6 sm:pl-10">
-            <aside className="w-screen max-w-md bg-[#fcfbf9] border-l-2 border-stone-300 shadow-2xl flex flex-col">
+          <div className="fixed inset-y-0 left-0 max-w-full flex pr-6 sm:pr-10">
+            <aside className="w-screen max-w-md bg-[#fcfbf9] border-r-2 border-stone-300 shadow-2xl flex flex-col">
               {/* Header */}
               <div className="p-5 sm:p-6 border-b-2 border-stone-300 flex items-center justify-between bg-white">
                 <div className="flex items-center gap-3">

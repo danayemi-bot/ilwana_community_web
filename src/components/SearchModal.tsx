@@ -166,11 +166,6 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                         <span className="text-[11px] text-stone-600 font-sans">
                           {item.category}
                         </span>
-                        {item.status === 'pending_confirmation' && (
-                          <span className="text-[10px] text-amber-700 bg-amber-50 px-1.5 py-0.2 border border-amber-200 rounded">
-                            Requires Confirmation
-                          </span>
-                        )}
                       </div>
                       <p className="text-xs text-stone-600 mt-0.5 line-clamp-1">
                         {item.englishMeaning}

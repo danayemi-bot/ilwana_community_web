@@ -43,103 +43,61 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectGlossary
       {/* =========================================================================
           OPEN PANORAMIC HERO: River Tana Clear & Vivid, Words & Mothers Free from Boxes
           ========================================================================= */}
-      <section className="relative overflow-hidden min-h-[580px] sm:min-h-[660px] lg:min-h-[720px] flex flex-col justify-between">
+      <section className="relative overflow-hidden min-h-[520px] sm:min-h-[620px] lg:min-h-[680px] flex flex-col justify-between">
         
-        {/* Full Scenic River Tana Aerial Panorama - Vivid, Crisp & Clearly Visible */}
+        {/* Full Scenic River Tana Aerial Panorama - Bright, Sunlit, Crisp & Clearly Visible */}
         <div className="absolute inset-0 z-0">
           <img
             src="/assets/aistudio/chaana_de7f7d77.png"
             alt="River Tana Meandering through Lush Tropical Forest"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center brightness-110 contrast-105"
           />
-          {/* Gentle, non-blocking subtle darkening only behind text for crisp contrast */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-black/10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
+          {/* Subtle soft gradient only on the far left so text is legible while the river is completely bright and open */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-transparent pointer-events-none" />
         </div>
 
-        {/* Hero Content Grid - Floating Directly Over River Tana without enclosing boxes */}
-        <div className="relative z-10 max-w-[1440px] w-full mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-14 pb-8 sm:pb-14">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+        {/* Hero Content - Unboxed Typography Floating Directly Over River Tana */}
+        <div className="relative z-10 max-w-[1440px] w-full mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-16 pb-12 sm:pb-16">
+          <div className="max-w-2xl xl:max-w-3xl space-y-4 sm:space-y-6 text-left">
             
-            {/* Left Side: Unboxed, Clear Typography Directly on the River Scene */}
-            <div className="lg:col-span-7 xl:col-span-7 space-y-4 sm:space-y-6 text-left">
-              
-              {/* Gold Diamond Geometric Badge: CHAANA DO KWEETO */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#d97706] text-stone-950 font-black text-xs sm:text-sm tracking-widest uppercase shadow-lg border border-amber-300">
-                <span>❖</span>
-                <span>CHAANA DO KWEETO</span>
-                <span>❖</span>
-              </div>
-
-              {/* Massive Hero Heading: Ilwana Community Heritage */}
-              <h1 className="font-serif font-black text-white text-4xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
-                Ilwana<br />
-                Community<br />
-                <span className="text-[#facc15] drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">Heritage</span>
-              </h1>
-
-              {/* Tagline Bar with Vertical Gold Accent - No Box */}
-              <div className="border-l-4 border-amber-400 pl-3.5 sm:pl-4 py-1 max-w-xl">
-                <p className="font-serif italic text-white text-base sm:text-lg lg:text-xl font-bold leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">
-                  Preserving the History, Language, Culture, and Heritage of the Wailwana.
-                </p>
-              </div>
-
-              {/* Action Buttons Directly on Scene */}
-              <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-1 sm:pt-2">
-                <button
-                  onClick={() => onNavigate('history')}
-                  className="flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-[#f59e0b] hover:bg-[#d97706] text-stone-950 font-black rounded-full text-sm sm:text-base shadow-2xl transition-transform active:scale-95 border-2 border-amber-300 cursor-pointer"
-                >
-                  <BookOpen className="w-5 h-5" />
-                  <span>Explore Our Heritage →</span>
-                </button>
-
-                <button
-                  onClick={() => onNavigate('gallery')}
-                  className="flex items-center gap-2 px-5 sm:px-7 py-3 sm:py-4 bg-stone-950/75 hover:bg-stone-950/90 text-white font-bold rounded-full text-sm sm:text-base border-2 border-white/80 backdrop-blur-md transition-all active:scale-95 shadow-xl cursor-pointer"
-                >
-                  <PlayCircle className="w-5 h-5 text-amber-300" />
-                  <span>Watch Our Story</span>
-                </button>
-              </div>
-
+            {/* Gold Diamond Geometric Badge: CHAANA DO KWEETO */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#d97706] text-stone-950 font-black text-xs sm:text-sm tracking-widest uppercase shadow-lg border border-amber-300">
+              <span>❖</span>
+              <span>CHAANA DO KWEETO</span>
+              <span>❖</span>
             </div>
 
-            {/* Right Side: Strategically Placed Mothers Overlooking River Tana - Free from clunky boxes */}
-            <div className="lg:col-span-5 xl:col-span-5 flex flex-col items-center lg:items-end justify-center pt-2 lg:pt-0">
-              <div className="relative max-w-md sm:max-w-lg w-full group">
-                
-                {/* Natural, clean photo element overlooking the River Tana */}
-                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-white/60 bg-stone-900/40 backdrop-blur-2xs">
-                  <img
-                    src="/assets/aistudio/beutiful_ilwana_items_af972299.png"
-                    alt="Wailwana mothers weaving traditional mats, trays and baskets"
-                    className="w-full h-56 sm:h-72 lg:h-84 object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                  />
-                  
-                  {/* Subtle caption banner */}
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-950/95 via-stone-950/60 to-transparent p-3 sm:p-4 text-white">
-                    <span className="text-[10px] sm:text-xs font-black uppercase tracking-wider bg-[#d97706] text-stone-950 px-2 py-0.5 rounded-full inline-block mb-1 shadow-sm">
-                      Living Tradition
-                    </span>
-                    <h3 className="font-serif font-black text-sm sm:text-base text-white drop-shadow-sm">
-                      Wailwana Mothers & Craftswomen
-                    </h3>
-                    <p className="text-[11px] sm:text-xs text-stone-200 font-medium line-clamp-1 sm:line-clamp-2">
-                      Weaving traditional floor mats (Irraanga), winnowing trays (Jolo), and baskets (Kapwera) along River Tana.
-                    </p>
-                  </div>
-                </div>
+            {/* Massive Hero Heading: Ilwana Community Heritage */}
+            <h1 className="font-serif font-black text-white text-4xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
+              Ilwana<br />
+              Community<br />
+              <span className="text-[#facc15] drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">Heritage</span>
+            </h1>
 
-                {/* Floating River Tana badge */}
-                <div className="absolute -top-3 -right-2 sm:-right-3 bg-white/95 backdrop-blur-md text-[#14532d] border border-stone-200 px-3 py-1 rounded-full shadow-lg flex items-center gap-1.5">
-                  <Waves className="w-3.5 h-3.5 text-[#14532d]" />
-                  <span className="text-xs font-black">
-                    River Tana Basin
-                  </span>
-                </div>
-              </div>
+            {/* Tagline Bar with Vertical Gold Accent - No Box */}
+            <div className="border-l-4 border-amber-400 pl-3.5 sm:pl-4 py-1 max-w-xl">
+              <p className="font-serif italic text-white text-base sm:text-lg lg:text-xl font-bold leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">
+                Preserving the History, Language, Culture, and Heritage of the Wailwana.
+              </p>
+            </div>
+
+            {/* Action Buttons Floating Directly on Scene */}
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-1 sm:pt-2">
+              <button
+                onClick={() => onNavigate('history')}
+                className="flex items-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 bg-[#f59e0b] hover:bg-[#d97706] text-stone-950 font-black rounded-full text-sm sm:text-base shadow-2xl transition-transform active:scale-95 border-2 border-amber-300 cursor-pointer"
+              >
+                <BookOpen className="w-5 h-5" />
+                <span>Explore Our Heritage →</span>
+              </button>
+
+              <button
+                onClick={() => onNavigate('gallery')}
+                className="flex items-center gap-2 px-5 sm:px-7 py-3.5 sm:py-4 bg-stone-950/75 hover:bg-stone-950/90 text-white font-bold rounded-full text-sm sm:text-base border-2 border-white/80 backdrop-blur-md transition-all active:scale-95 shadow-xl cursor-pointer"
+              >
+                <PlayCircle className="w-5 h-5 text-amber-300" />
+                <span>Watch Our Story</span>
+              </button>
             </div>
 
           </div>
@@ -292,19 +250,19 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectGlossary
         {/* 4 Primary Showcases with user images */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           
-          {/* Card 1: The Hayu & Leadership - FACE CLEARLY VISIBLE WITH OBJECT-TOP */}
+          {/* Card 1: The Hayu & Leadership - HEAD, CAP, MICROPHONE & CHEST CLEARLY VISIBLE */}
           <div
             onClick={() => onNavigate('governance')}
             className="group cursor-pointer bg-white rounded-2xl border-2 border-stone-300 overflow-hidden hover:border-[#14532d] hover:shadow-xl transition-all flex flex-col justify-between"
           >
             <div>
-              <div className="relative h-64 sm:h-72 overflow-hidden bg-stone-900">
+              <div className="relative h-80 sm:h-96 overflow-hidden bg-stone-950 flex items-center justify-center">
                 <img
                   src="/assets/aistudio/hayu_adddressing_67ed9fc2.png"
                   alt="The Hayu Addressing the Assembly"
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-contain object-top group-hover:scale-105 transition-transform duration-500"
                 />
-                <span className="absolute top-3 left-3 bg-stone-950/90 text-amber-300 text-xs font-black px-3 py-1 rounded-full border border-amber-400">
+                <span className="absolute top-3 left-3 bg-stone-950/90 text-amber-300 text-xs font-black px-3 py-1 rounded-full border border-amber-400 shadow-sm">
                   Hayu (Traditional King)
                 </span>
               </div>
@@ -314,7 +272,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectGlossary
                   The Hayu in Assembly
                 </h3>
                 <p className="text-sm text-stone-950 font-normal leading-relaxed">
-                  The traditional monarch with royal embroidered cap addressing community members, embodying communal unity, moral authority, and reconciliation.
+                  The traditional monarch in ceremonial dress with royal embroidered cap addressing the assembly with microphone, embodying communal unity and moral guidance.
                 </p>
               </div>
             </div>
@@ -636,7 +594,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectGlossary
                 Clans & Rites of Passage
               </h3>
               <p className="text-base text-stone-950 leading-relaxed font-normal">
-                Discover the traditional clans, rites of passage, customary marriage customs, dowry (Kupacha), and inter-clan solidarity.
+                Discover the traditional clans, rites of passage, customary marriage customs, customary dowry, and inter-clan solidarity.
               </p>
             </div>
             <div className="pt-4 flex items-center gap-1.5 text-sm font-black text-[#14532d]">

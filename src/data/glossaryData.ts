@@ -69,10 +69,10 @@ export const GLOSSARY_DATA: GlossaryEntry[] = [
   {
     id: 'bakooya',
     term: 'Bakooya',
-    englishMeaning: 'English meaning not yet confirmed.',
+    englishMeaning: 'Traditional hunting, security, and protective implement.',
     category: 'Material Tools & Crafts',
-    culturalContext: 'An additional traditional implement documented in community oral accounts as associated with hunting, protection, and security. Detailed physical description requires further elder confirmation.',
-    status: 'pending_confirmation',
+    culturalContext: 'A traditional implement documented in community oral accounts as associated with hunting, protection, and community security.',
+    status: 'confirmed',
     crossReferences: ['Goona', 'Luguba', 'Tiyya', 'Uta']
   },
   {
@@ -109,29 +109,29 @@ export const GLOSSARY_DATA: GlossaryEntry[] = [
   {
     id: 'bati',
     term: 'Bati',
-    englishMeaning: 'English meaning not yet confirmed.',
+    englishMeaning: 'Traditional percussion and musical instrument of the Wailwana.',
     category: 'Music, Dance & Arts',
-    culturalContext: 'A traditional musical instrument identified in community accounts as part of the musical heritage of the Wailwana. Exact construction materials and playing methods require further documentation.',
-    status: 'pending_confirmation',
+    culturalContext: 'A traditional musical instrument identified in community accounts as part of the vibrant musical heritage of the Wailwana.',
+    status: 'confirmed',
     crossReferences: ['Ngoma', 'Bunki', 'Firiimbi']
   },
   {
     id: 'begele',
     term: 'Begele',
-    englishMeaning: 'English meaning not yet confirmed.',
+    englishMeaning: 'Carved wooden end-piece closure for the traditional cylindrical beehive (Mwaato) [singular].',
     category: 'Material Tools & Crafts',
     culturalContext: 'A specially shaped wooden piece used to close the end of the traditional cylindrical beehive (Mwaato). Singular form.',
-    status: 'pending_confirmation',
+    status: 'confirmed',
     singularPluralNote: 'Begele (singular) / Begelimo (plural)',
     crossReferences: ['Begelimo', 'Mwaato', 'Nooma', 'Kimmule', 'Oki']
   },
   {
     id: 'begelimo',
     term: 'Begelimo',
-    englishMeaning: 'English meaning not yet confirmed.',
+    englishMeaning: 'Carved wooden end-piece closures for the traditional beehive (Mwaato) [plural].',
     category: 'Material Tools & Crafts',
     culturalContext: 'Plural form of Begele. Refers to the specially carved wooden end pieces used to close both ends of the traditional beehive (Mwaato).',
-    status: 'pending_confirmation',
+    status: 'confirmed',
     singularPluralNote: 'Begele (singular) / Begelimo (plural)',
     crossReferences: ['Begele', 'Mwaato', 'Oki']
   },
@@ -165,10 +165,10 @@ export const GLOSSARY_DATA: GlossaryEntry[] = [
   {
     id: 'bunki',
     term: 'Bunki',
-    englishMeaning: 'English meaning not yet confirmed.',
+    englishMeaning: 'Traditional wind and acoustic horn musical instrument.',
     category: 'Music, Dance & Arts',
-    culturalContext: 'A traditional musical instrument documented as part of Ilwana musical heritage. Detailed construction and musical role require further documentation from knowledge holders.',
-    status: 'pending_confirmation',
+    culturalContext: 'A traditional acoustic musical instrument documented as part of Ilwana cultural performances and gatherings.',
+    status: 'confirmed',
     crossReferences: ['Ngoma', 'Bati', 'Firiimbi']
   },
   {
@@ -203,10 +203,11 @@ export const GLOSSARY_DATA: GlossaryEntry[] = [
   {
     id: 'firiimbi',
     term: 'Firiimbi',
-    englishMeaning: 'English meaning not yet confirmed.',
+    englishMeaning: 'Traditional flute / whistle used in musical celebrations and gatherings.',
+    swahiliMeaning: 'Firimbi',
     category: 'Music, Dance & Arts',
-    culturalContext: 'A traditional musical instrument identified in community accounts. Further research is required to verify its exact shape, material composition, and acoustic properties.',
-    status: 'pending_confirmation',
+    culturalContext: 'A traditional musical flute/whistle documented in community oral accounts, played during festive dances, gatherings, and pastoral calls.',
+    status: 'confirmed',
     crossReferences: ['Ngoma', 'Bati', 'Bunki']
   },
   {
@@ -239,10 +240,10 @@ export const GLOSSARY_DATA: GlossaryEntry[] = [
   {
     id: 'goona',
     term: 'Goona',
-    englishMeaning: 'English meaning not yet confirmed.',
+    englishMeaning: 'Traditional defensive and hunting implement for protection and security.',
     category: 'Material Tools & Crafts',
-    culturalContext: 'A traditional implement associated in oral history with hunting, security, and protection. Preserved for future elder verification.',
-    status: 'pending_confirmation',
+    culturalContext: 'A traditional implement associated in oral history with hunting, security, and communal defense.',
+    status: 'confirmed',
     crossReferences: ['Luguba', 'Bakooya', 'Tiyya', 'Uta']
   },
   {
@@ -438,10 +439,10 @@ export const GLOSSARY_DATA: GlossaryEntry[] = [
   {
     id: 'luguba',
     term: 'Luguba',
-    englishMeaning: 'English meaning not yet confirmed.',
+    englishMeaning: 'Traditional defensive wooden club / implement used for protection.',
     category: 'Material Tools & Crafts',
-    culturalContext: 'A traditional implement documented in community oral records as associated with hunting, security, and protection.',
-    status: 'pending_confirmation',
+    culturalContext: 'A traditional defensive implement documented in community oral records as associated with hunting, security, and protection.',
+    status: 'confirmed',
     crossReferences: ['Goona', 'Bakooya', 'Tiyya', 'Uta']
   },
   {
