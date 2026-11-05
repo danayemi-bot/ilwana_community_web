@@ -15,11 +15,13 @@ import { GlossaryPage } from './pages/GlossaryPage';
 import { DocumentationPage } from './pages/DocumentationPage';
 import { ContributionsPage } from './pages/ContributionsPage';
 import { GalleryPage } from './pages/GalleryPage';
-import { ArrowUp } from 'lucide-react';
+import { CulturalAssistantModal } from './components/CulturalAssistantModal';
+import { ArrowUp, Sparkles } from 'lucide-react';
 
 export default function App() {
   const [activePage, setActivePage] = useState<PageId>('home');
   const [searchOpen, setSearchOpen] = useState(false);
+  const [assistantOpen, setAssistantOpen] = useState(false);
   const [selectedGlossaryTerm, setSelectedGlossaryTerm] = useState<string | undefined>(undefined);
   const [showBackToTop, setShowBackToTop] = useState(false);
 
@@ -94,6 +96,7 @@ export default function App() {
         activePage={activePage}
         onNavigate={handleNavigate}
         onOpenSearch={() => setSearchOpen(true)}
+        onOpenAssistant={() => setAssistantOpen(true)}
       />
 
       {/* Main Content Area */}
@@ -144,6 +147,28 @@ export default function App() {
         onNavigate={handleNavigate}
         onSelectGlossaryTerm={handleSelectGlossaryTerm}
       />
+
+      {/* 100% Free Client-Side AI Cultural Guide Modal */}
+      <CulturalAssistantModal
+        isOpen={assistantOpen}
+        onClose={() => setAssistantOpen(false)}
+        onNavigate={handleNavigate}
+        onSelectGlossaryTerm={handleSelectGlossaryTerm}
+      />
+
+      {/* Floating AI Cultural Guide Action Button */}
+      <button
+        onClick={() => setAssistantOpen(true)}
+        className="fixed bottom-6 left-5 z-30 inline-flex items-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 bg-gradient-to-r from-[#0f4c5c] to-[#14532d] hover:from-[#135d70] hover:to-[#1b6b3e] text-white rounded-full shadow-2xl transition-all hover:scale-105 active:scale-95 border-2 border-amber-400/40 font-bold text-xs sm:text-sm cursor-pointer group"
+        aria-label="Open Ilwana AI Cultural Guide"
+        title="Ask the Ilwana AI Cultural Guide"
+      >
+        <Sparkles className="w-4 h-4 text-amber-300 group-hover:rotate-12 transition-transform" />
+        <span className="font-serif tracking-wide">Ask AI Guide</span>
+        <span className="hidden sm:inline text-[10px] uppercase font-mono font-bold bg-amber-400 text-stone-950 px-1.5 py-0.2 rounded-full">
+          Free
+        </span>
+      </button>
 
       {/* Back to Top Floating Button */}
       {showBackToTop && (

@@ -16,6 +16,7 @@ import {
   MapPin,
   Heart
 } from 'lucide-react';
+import { useBodyScrollLock } from '../hooks/useBodyScrollLock';
 
 export type PageId =
   | 'home'
@@ -36,6 +37,7 @@ interface NavbarProps {
   activePage: PageId;
   onNavigate: (page: PageId) => void;
   onOpenSearch?: () => void;
+  onOpenAssistant?: () => void;
 }
 
 export const SECTIONS: { id: PageId; label: string; number: string; icon: any }[] = [
@@ -54,8 +56,16 @@ export const SECTIONS: { id: PageId; label: string; number: string; icon: any }[
   { id: 'contribute', label: 'Community Contributions', number: '13', icon: Users },
 ];
 
-export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenSearch }) => {
+export const Navbar: React.FC<NavbarProps> = ({
+  activePage,
+  onNavigate,
+  onOpenSearch,
+  onOpenAssistant
+}) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Lock body scroll so background home screen never scrolls behind open drawer
+  useBodyScrollLock(mobileMenuOpen);
 
   const handleNavClick = (page: PageId) => {
     onNavigate(page);
@@ -148,11 +158,24 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenSe
                   <ChevronDown className="w-4 h-4 text-stone-500" />
                 </button>
 
+                {/* AI Guide Button */}
+                {onOpenAssistant && (
+                  <button
+                    onClick={onOpenAssistant}
+                    className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#0f4c5c] to-[#14532d] text-white hover:from-[#135d70] hover:to-[#1a6b3b] font-bold text-xs transition-all ml-1 cursor-pointer shadow-xs hover:scale-105"
+                    title="Ask Ilwana AI Cultural Guide"
+                    aria-label="Ask Ilwana AI Cultural Guide"
+                  >
+                    <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+                    <span className="font-serif">AI Guide</span>
+                  </button>
+                )}
+
                 {/* Search Icon button */}
                 {onOpenSearch && (
                   <button
                     onClick={onOpenSearch}
-                    className="p-2 rounded-full hover:bg-stone-100 text-stone-700 hover:text-[#1b4332] transition-colors ml-1 cursor-pointer"
+                    className="p-2 rounded-full hover:bg-stone-100 text-stone-700 hover:text-[#1b4332] transition-colors ml-0.5 cursor-pointer"
                     title="Search Archive (Ctrl+K)"
                     aria-label="Search Heritage Content"
                   >
@@ -162,15 +185,25 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenSe
               </nav>
             </div>
 
-            {/* Mobile / Tablet Quick Search on Right */}
-            <div className="flex xl:hidden items-center gap-2 shrink-0">
+            {/* Mobile / Tablet Quick Search & AI Guide on Right */}
+            <div className="flex xl:hidden items-center gap-1.5 shrink-0">
+              {onOpenAssistant && (
+                <button
+                  onClick={onOpenAssistant}
+                  className="flex items-center gap-1 px-3 py-1.5 text-xs font-bold text-white bg-gradient-to-r from-[#0f4c5c] to-[#14532d] rounded-full shadow-xs cursor-pointer active:scale-95"
+                  aria-label="AI Cultural Guide"
+                >
+                  <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+                  <span className="font-serif">AI Guide</span>
+                </button>
+              )}
               {onOpenSearch && (
                 <button
                   onClick={onOpenSearch}
-                  className="p-2.5 text-stone-800 hover:text-[#14532d] hover:bg-stone-100 rounded-full border border-stone-300 cursor-pointer shadow-2xs"
+                  className="p-2 text-stone-800 hover:text-[#14532d] hover:bg-stone-100 rounded-full border border-stone-300 cursor-pointer shadow-2xs"
                   aria-label="Search"
                 >
-                  <Search className="w-5 h-5" />
+                  <Search className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
               )}
             </div>
@@ -212,15 +245,15 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenSe
 
       {/* Navigation Drawer */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 overflow-hidden">
+        <div className="fixed inset-0 z-50 overflow-hidden overscroll-contain">
           <div
-            className="fixed inset-0 bg-stone-950/60 backdrop-blur-xs transition-opacity"
+            className="fixed inset-0 bg-stone-950/60 backdrop-blur-xs transition-opacity touch-none"
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
 
           <div className="fixed inset-y-0 left-0 max-w-full flex pr-6 sm:pr-10">
-            <aside className="w-screen max-w-md bg-[#fcfbf9] border-r-2 border-stone-300 shadow-2xl flex flex-col">
+            <aside className="w-screen max-w-md bg-[#fcfbf9] border-r-2 border-stone-300 shadow-2xl flex flex-col overscroll-contain">
               {/* Header */}
               <div className="p-5 sm:p-6 border-b-2 border-stone-300 flex items-center justify-between bg-white">
                 <div className="flex items-center gap-3">
@@ -245,6 +278,30 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenSe
                   <X className="w-6 h-6" />
                 </button>
               </div>
+
+              {/* AI Cultural Guide Banner in Drawer */}
+              {onOpenAssistant && (
+                <div className="p-4 pb-0">
+                  <button
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      onOpenAssistant();
+                    }}
+                    className="w-full flex items-center justify-between px-4 py-3 rounded-2xl bg-gradient-to-r from-[#0f4c5c] to-[#14532d] text-white font-black shadow-md cursor-pointer hover:opacity-95 transition-opacity border border-white/20"
+                  >
+                    <div className="flex items-center gap-3">
+                      <Sparkles className="w-5 h-5 text-amber-300" />
+                      <div className="text-left">
+                        <span className="text-sm font-black tracking-tight block font-serif">Ilwana AI Cultural Guide</span>
+                        <span className="text-[11px] font-normal text-stone-200">Instant answers & language quiz</span>
+                      </div>
+                    </div>
+                    <span className="text-[10px] uppercase font-mono font-bold bg-amber-400 text-stone-950 px-2 py-0.5 rounded-full shrink-0">
+                      100% Free
+                    </span>
+                  </button>
+                </div>
+              )}
 
               {/* Links list */}
               <div className="flex-1 overflow-y-auto p-4 space-y-2">

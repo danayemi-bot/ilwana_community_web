@@ -39,11 +39,11 @@ export const GovernancePage: React.FC<GovernancePageProps> = ({ onNavigate }) =>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center pt-2">
-          <div className="lg:col-span-5 rounded-2xl overflow-hidden border-2 border-amber-400 shadow-md">
+          <div className="lg:col-span-5 rounded-2xl overflow-hidden border-2 border-amber-400 shadow-md bg-stone-950 flex flex-col items-center">
             <img
               src="/assets/aistudio/hayu_adddressing_67ed9fc2.png"
               alt="The Hayu addressing community assembly"
-              className="w-full max-h-[520px] object-cover object-top"
+              className="w-full max-h-[540px] object-contain object-top"
             />
             <div className="bg-stone-900 text-stone-200 p-2.5 text-xs font-medium">
               <span className="font-black text-amber-400 block uppercase tracking-wide">Authentic Record</span>

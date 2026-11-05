@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { GLOSSARY_DATA, GlossaryEntry } from '../data/glossaryData';
 import { PageId } from '../components/Navbar';
 import { Feather, BookOpen, Volume2, ShieldAlert, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { playPronunciation } from '../utils/speech';
 
 interface LanguagePageProps {
   onNavigate: (page: PageId) => void;
@@ -175,9 +176,19 @@ export const LanguagePage: React.FC<LanguagePageProps> = ({ onNavigate, onSelect
             >
               <div className="flex items-start justify-between gap-2">
                 <div>
-                  <h3 className="font-serif text-2xl font-extrabold text-stone-950">
-                    {item.term}
-                  </h3>
+                  <div className="flex items-center gap-2">
+                    <h3 className="font-serif text-2xl font-extrabold text-stone-950">
+                      {item.term}
+                    </h3>
+                    <button
+                      onClick={() => playPronunciation(item.term, item.phoneticHint)}
+                      className="p-1 text-stone-500 hover:text-[#0f4c5c] hover:bg-stone-100 rounded-lg transition-colors cursor-pointer"
+                      title={`Listen to pronunciation of ${item.term}`}
+                      aria-label={`Pronounce ${item.term}`}
+                    >
+                      <Volume2 className="w-5 h-5 text-[#0f4c5c]" />
+                    </button>
+                  </div>
                   {item.phoneticHint && (
                     <span className="text-xs font-mono font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded border border-amber-200 inline-block mt-0.5">
                       [{item.phoneticHint}]

@@ -3,6 +3,7 @@ import { Search, X, BookOpen, MapPin, Shield, Music, ArrowRight } from 'lucide-r
 import { GLOSSARY_DATA, GlossaryEntry } from '../data/glossaryData';
 import { SETTLEMENTS_DATA, SONGS_DATA, CLANS_DATA } from '../data/heritageData';
 import { PageId } from './Navbar';
+import { useBodyScrollLock } from '../hooks/useBodyScrollLock';
 
 interface SearchModalProps {
   isOpen: boolean;
@@ -18,6 +19,9 @@ export const SearchModal: React.FC<SearchModalProps> = ({
   onSelectGlossaryTerm,
 }) => {
   const [query, setQuery] = useState('');
+
+  // Lock body scroll so background page cannot scroll behind search modal
+  useBodyScrollLock(isOpen);
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -57,10 +61,10 @@ export const SearchModal: React.FC<SearchModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto p-4 sm:p-6 md:p-20 flex justify-center items-start">
+    <div className="fixed inset-0 z-50 overflow-y-auto p-4 sm:p-6 md:p-20 flex justify-center items-start overscroll-contain">
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-stone-950/60 backdrop-blur-xs transition-opacity"
+        className="fixed inset-0 bg-stone-950/60 backdrop-blur-xs transition-opacity touch-none"
         onClick={onClose}
         aria-hidden="true"
       />

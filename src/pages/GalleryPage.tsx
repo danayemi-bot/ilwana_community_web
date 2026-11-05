@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PageId } from '../components/Navbar';
 import { Camera, Filter, ExternalLink, ArrowRight, Sparkles, Waves, Crown, Hammer, Flame } from 'lucide-react';
+import { useBodyScrollLock } from '../hooks/useBodyScrollLock';
 
 interface GalleryPageProps {
   onNavigate: (page: PageId) => void;
@@ -179,6 +180,9 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onNavigate }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [activeModalItem, setActiveModalItem] = useState<GalleryItem | null>(null);
 
+  // Lock body scroll so background home screen never scrolls behind lightbox modal
+  useBodyScrollLock(Boolean(activeModalItem));
+
   const categories = [
     { id: 'all', label: 'All Artifacts & Photos' },
     { id: 'leadership', label: 'Leadership & Elders' },
@@ -237,15 +241,23 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onNavigate }) => {
             className="group bg-white rounded-2xl border-2 border-stone-300 overflow-hidden shadow-sm hover:shadow-xl hover:border-[#0f4c5c] transition-all flex flex-col justify-between"
           >
             <div>
-              {/* Photo Frame */}
+              {/* Photo Frame - For Hayu: Full portrait showing head, cap, chest and microphone */}
               <div
-                className="relative h-64 overflow-hidden bg-stone-100 cursor-pointer"
+                className={`relative overflow-hidden cursor-pointer ${
+                  item.id === 'hayu-address'
+                    ? 'h-80 sm:h-96 md:h-[400px] bg-stone-950 flex items-center justify-center'
+                    : 'h-64 bg-stone-100'
+                }`}
                 onClick={() => setActiveModalItem(item)}
               >
                 <img
                   src={item.image}
                   alt={item.title}
-                  className={`w-full h-full object-cover ${item.id === 'hayu-address' ? 'object-top' : 'object-center'} group-hover:scale-105 transition-transform duration-500`}
+                  className={`w-full h-full ${
+                    item.id === 'hayu-address'
+                      ? 'object-contain object-top'
+                      : 'object-cover object-center'
+                  } group-hover:scale-105 transition-transform duration-500`}
                   loading="lazy"
                 />
                 <div className="absolute top-3 left-3 bg-stone-950/85 backdrop-blur-md px-3 py-1 rounded-full text-xs font-black text-amber-300 border border-amber-500/40">
@@ -254,6 +266,11 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onNavigate }) => {
                 <div className="absolute bottom-3 right-3 bg-[#0f4c5c]/90 text-white text-[11px] font-black uppercase tracking-wider px-2.5 py-1 rounded-md">
                   {item.categoryLabel}
                 </div>
+                {item.id === 'hayu-address' && (
+                  <div className="absolute bottom-3 left-3 bg-stone-900/90 text-amber-300 text-[10px] font-mono font-bold px-2.5 py-1 rounded-md border border-amber-400/40 shadow-xs">
+                    Full Portrait (Head, Chest & Mic)
+                  </div>
+                )}
               </div>
 
               {/* Card Body */}
@@ -297,22 +314,26 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onNavigate }) => {
       {/* Lightbox Modal */}
       {activeModalItem && (
         <div
-          className="fixed inset-0 z-50 bg-stone-950/90 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto"
+          className="fixed inset-0 z-50 bg-stone-950/95 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 overflow-y-auto overscroll-contain"
           onClick={() => setActiveModalItem(null)}
         >
           <div
-            className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border-2 border-amber-500 shadow-2xl relative"
+            className="fixed inset-0 touch-none"
+            aria-hidden="true"
+          />
+          <div
+            className="bg-white rounded-3xl max-w-4xl w-full max-h-[92vh] overflow-y-auto overscroll-contain border-2 border-amber-500 shadow-2xl relative z-10"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative bg-stone-950 flex items-center justify-center max-h-[60vh] overflow-hidden">
+            <div className="relative bg-stone-950 flex items-center justify-center min-h-[50vh] max-h-[72vh] overflow-hidden p-2 sm:p-4">
               <img
                 src={activeModalItem.image}
                 alt={activeModalItem.title}
-                className="max-h-[60vh] w-auto object-contain"
+                className="max-h-[70vh] w-auto max-w-full object-contain mx-auto shadow-2xl"
               />
               <button
                 onClick={() => setActiveModalItem(null)}
-                className="absolute top-4 right-4 bg-white/90 hover:bg-white text-stone-950 font-black px-3.5 py-1.5 rounded-full text-sm shadow-md"
+                className="absolute top-4 right-4 bg-white/95 hover:bg-white text-stone-950 font-black px-4 py-2 rounded-full text-sm shadow-xl cursor-pointer transition-transform hover:scale-105"
               >
                 ✕ Close
               </button>
