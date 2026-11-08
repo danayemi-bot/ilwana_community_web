@@ -663,7 +663,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectGlossary
                 Traditional Music & Dance
               </h3>
               <p className="text-base text-stone-950 leading-relaxed font-normal">
-                Four major dance forms: the athletic Mbalwa, the celebratory Bumbuu, the women-led Kinaango, and the nocturnal spiritual dance Ngoma ya P’ep’o.
+                Celebrated Ilwana dances and musical traditions: the joyful Kitoko, the sacred childbirth celebration Ukaamwaale, Koras, Mashingwe, and Mkao, guided by the rhythms of Ngoma, Tasi, Bunki, and Firiimbi.
               </p>
             </div>
             <div className="pt-4 flex items-center gap-1.5 text-sm font-black text-[#14532d]">

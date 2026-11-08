@@ -182,6 +182,16 @@ export const GLOSSARY_DATA: GlossaryEntry[] = [
     crossReferences: ['Waato', 'Boodo', 'Mokoobi']
   },
   {
+    id: 'chika',
+    term: 'Chika',
+    englishMeaning: 'Small freshwater river fish, normally caught in large numbers using nets from the River Tana.',
+    swahiliMeaning: 'Samaki wadogo wa mtoni',
+    category: 'Food & Gastronomy',
+    culturalContext: 'Small river fish caught in abundance with traditional nets along the River Tana floodplains; prepared fresh in stews or sun-dried as a valuable source of family nutrition.',
+    status: 'confirmed',
+    crossReferences: ['Dokwena', 'Chaana', 'Waato']
+  },
+  {
     id: 'daade',
     term: 'Daade',
     englishMeaning: 'Sister.',

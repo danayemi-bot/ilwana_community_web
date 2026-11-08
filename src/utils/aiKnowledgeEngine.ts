@@ -118,15 +118,15 @@ export const KILWANA_QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'q7',
-    question: "What is 'Chika' in Wailwana culinary heritage?",
+    question: "What is 'Chika' in Wailwana river heritage and culinary traditions?",
     options: [
-      "Wild forest honey eaten with porridge",
-      "A cherished dish made of mashed ripe bananas combined with cooked maize",
-      "A dry-season fish preserved through sun-drying",
+      "Wild forest honey harvested with smoke",
+      "Small freshwater fish normally caught in large numbers with nets from the River Tana",
+      "A carved ceremonial wooden headrest",
       "A roasted pumpkin stew"
     ],
     correctIndex: 1,
-    explanation: "Chika is a beloved traditional dish prepared by mashing sweet ripe bananas with cooked maize grains.",
+    explanation: "Chika refers to the small freshwater river fish normally caught in large numbers using nets along the River Tana, prepared fresh or sun-dried.",
     category: "Food & Gastronomy"
   },
   {
@@ -280,6 +280,7 @@ export function answerHeritageQuery(rawQuery: string): AIAnswer {
     query.includes('bunki') ||
     query.includes('firiimbi') ||
     query.includes('kitoko') ||
+    query.includes('ukaamwaale') ||
     query.includes('koras') ||
     query.includes('mashingwe') ||
     query.includes('drum') ||
@@ -290,7 +291,7 @@ export function answerHeritageQuery(rawQuery: string): AIAnswer {
     return {
       summary: "Traditional music and dance express the spiritual pulse, joy, and collective identity of the Wailwana along the River Tana.",
       details: [
-        "Traditional Dances: Include Kitoko (celebratory and festive dance), Koras, Mashingwe, and Mkao (work and harvest dance).",
+        "Traditional Dances: Include Kitoko (celebratory and festive dance), Ukaamwaale (childbirth celebration dance), Koras, Mashingwe, and Mkao (work and harvest dance).",
         "Core Instruments: The Ngoma (carved percussion drum), the Tasi (percussion instrument anchoring rhythm), the Bunki (ceremonial sounding horn), and the Firiimbi (flute and whistle).",
         "Song Poetry: Preserved in authentic Kilwana lyrics celebrating courage, river journeys, and elder wisdom."
       ],
@@ -324,7 +325,7 @@ export function answerHeritageQuery(rawQuery: string): AIAnswer {
     return {
       summary: "Wailwana cuisine harmoniously reflects the fertile soils of the River Tana floodplain, blending river fish, bananas, maize, and wild honey.",
       details: [
-        "Chika: A cherished signature dish made by combining mashed ripe sweet bananas with boiled maize grains.",
+        "Chika: Small freshwater river fish normally caught in large numbers with nets from the River Tana, prepared fresh in stews or sun-dried.",
         "River Harvest: Fresh fish (Samaki) from the Tana prepared with fragrant spices, coconut, and greens.",
         "Honey Traditions: Pure honey harvested from traditional tree beehives (Mwaato) used for celebrations and hospitality."
       ],
