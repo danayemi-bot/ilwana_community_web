@@ -20,7 +20,7 @@ import {
   CULTURAL_PRESET_QUESTIONS,
   KILWANA_QUIZ_QUESTIONS
 } from '../utils/aiKnowledgeEngine';
-import { playPronunciation } from '../utils/speech';
+import { playPronunciation, stopSpeech } from '../utils/speech';
 import { PageId } from './Navbar';
 import { useBodyScrollLock } from '../hooks/useBodyScrollLock';
 
@@ -166,6 +166,22 @@ export const CulturalAssistantModal: React.FC<CulturalAssistantModalProps> = ({
     }
   }, [isOpen, activeTab]);
 
+  // Clean up speech synthesis on modal close, unmount, or tab switch
+  useEffect(() => {
+    if (!isOpen) {
+      stopSpeech();
+      setIsSpeakingId(null);
+    }
+    return () => {
+      stopSpeech();
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
+    stopSpeech();
+    setIsSpeakingId(null);
+  }, [activeTab]);
+
   if (!isOpen) return null;
 
   const handleAsk = (queryText: string) => {
@@ -196,6 +212,8 @@ export const CulturalAssistantModal: React.FC<CulturalAssistantModalProps> = ({
   };
 
   const handleClearChat = () => {
+    stopSpeech();
+    setIsSpeakingId(null);
     setMessages([
       {
         id: `welcome-${Date.now()}`,
@@ -209,9 +227,7 @@ export const CulturalAssistantModal: React.FC<CulturalAssistantModalProps> = ({
 
   const handleSpeak = (msgId: string, textToSpeak: string) => {
     if (isSpeakingId === msgId) {
-      if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-      }
+      stopSpeech();
       setIsSpeakingId(null);
       return;
     }

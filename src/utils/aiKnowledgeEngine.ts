@@ -193,7 +193,7 @@ export function answerHeritageQuery(rawQuery: string): AIAnswer {
       summary: "In the Ilwana social order, the Hayu serves as the supreme traditional leader, spiritual father, and highest moral authority.",
       details: [
         "The Hayu is selected from eligible lineages through council deliberation based on exceptional character, moral standing, deep knowledge of customary law, and justice.",
-        "Under the Hayu is the Gasa (traditional supreme court and elder council), which arbitrates boundary questions, family disputes, and customary reparations (Maalu).",
+        "Under the Hayu is the Gasa (traditional supreme court and elder council), which arbitrates boundary questions and family disputes.",
         "The governance philosophy emphasizes restorative justice, community harmony, and consensus rather than punitive force."
       ],
       relatedTerms: hayuTerm ? [hayuTerm] : [],
@@ -201,7 +201,7 @@ export function answerHeritageQuery(rawQuery: string): AIAnswer {
       suggestedQuestions: [
         "What is the Gasa elder court?",
         "What are the 8 clans of the Wailwana?",
-        "What customary reparations (Maalu) were applied?"
+        "How does the Gasa arbitrate community disputes?"
       ]
     };
   }
