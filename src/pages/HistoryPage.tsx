@@ -27,25 +27,39 @@ export const HistoryPage: React.FC<HistoryPageProps> = ({ onNavigate }) => {
       {/* Etymology & Linguistic Distinction */}
       <section className="space-y-6">
         <h2 className="font-serif text-2xl sm:text-3xl font-extrabold text-stone-950">
-          The Names: Ilwana and Wailwana
+          The Names: Ilwana, Wailwana, Mwilwana, and Kilwana
         </h2>
         <div className="prose max-w-none text-stone-900 leading-relaxed space-y-4 text-base sm:text-lg">
           <p>
-            Understanding the identity of the community begins with understanding the terminology used by the people themselves. In the Kilwana language, a vital grammatical distinction is maintained:
+            Understanding the identity of the community begins with understanding the terminology used by the people themselves. In Kilwana, a vital grammatical distinction is maintained:
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 my-6">
             <div className="bg-white p-6 rounded-2xl border-2 border-stone-300 shadow-xs space-y-2.5">
-              <span className="text-xs font-mono text-[#0f4c5c] font-bold tracking-wider">COLLECTIVE ENTITY</span>
+              <span className="text-xs font-mono text-[#0f4c5c] font-bold tracking-wider uppercase">Collective Heritage</span>
               <h3 className="font-serif text-2xl font-extrabold text-stone-950">Ilwana</h3>
               <p className="text-base text-stone-900 font-normal leading-relaxed">
                 Refers to the <strong className="text-stone-950 font-bold">community as a whole</strong>, its culture, shared territory, and ethnic body. Comparable to how "Pokomo" or "Kamba" refers to the community.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl border-2 border-stone-300 shadow-xs space-y-2.5">
-              <span className="text-xs font-mono text-[#0f4c5c] font-bold tracking-wider">INDIVIDUAL MEMBERS</span>
+              <span className="text-xs font-mono text-[#0f4c5c] font-bold tracking-wider uppercase">Plural (The People)</span>
               <h3 className="font-serif text-2xl font-extrabold text-stone-950">Wailwana</h3>
               <p className="text-base text-stone-900 font-normal leading-relaxed">
-                Refers to the <strong className="text-stone-950 font-bold">individual people</strong> belonging to the community. Comparable to "Wapokomo" or "Wakamba" in Kenyan linguistic structures.
+                <strong className="text-stone-950 font-bold">Wailwana is plural</strong>, designating the members of the community collectively (comparable to <em className="text-stone-950 font-semibold">Wapokomo</em>, <em className="text-stone-950 font-semibold">Wakamba</em>, or <em className="text-stone-950 font-semibold">Wasomali</em>).
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-2xl border-2 border-stone-300 shadow-xs space-y-2.5">
+              <span className="text-xs font-mono text-[#0f4c5c] font-bold tracking-wider uppercase">Singular (One Person)</span>
+              <h3 className="font-serif text-2xl font-extrabold text-stone-950">Mwilwana</h3>
+              <p className="text-base text-stone-900 font-normal leading-relaxed">
+                <strong className="text-stone-950 font-bold">Mwilwana is singular</strong> (one person). When asked about personal identity, an individual says <em className="text-stone-950 font-bold">"I am Mwilwana"</em>, just like one says <em className="text-stone-950 font-semibold">Mpokomo, Mkamba, or Msomali</em>.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-2xl border-2 border-stone-300 shadow-xs space-y-2.5">
+              <span className="text-xs font-mono text-[#0f4c5c] font-bold tracking-wider uppercase">Language Spoken</span>
+              <h3 className="font-serif text-2xl font-extrabold text-stone-950">Kilwana</h3>
+              <p className="text-base text-stone-900 font-normal leading-relaxed">
+                <strong className="text-stone-950 font-bold">Kilwana is the language</strong> that the Wailwana speak. It carries the wisdom, oral histories, philosophies, songs, and ancestral memories of the people across generations.
               </p>
             </div>
           </div>

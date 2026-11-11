@@ -34,7 +34,7 @@ export const CULTURAL_PRESET_QUESTIONS = [
   "What traditional musical instruments are played by the Wailwana?",
   "How is the traditional beehive (Mwaato) constructed?",
   "What is the traditional dugout canoe (Waato)?",
-  "What is the distinction between Ilwana and Wailwana?"
+  "What is the distinction between Ilwana, Wailwana, and Mwilwana?"
 ];
 
 export const KILWANA_QUIZ_QUESTIONS: QuizQuestion[] = [
@@ -141,6 +141,19 @@ export const KILWANA_QUIZ_QUESTIONS: QuizQuestion[] = [
     correctIndex: 2,
     explanation: "The Wailwana are organized into 8 major foundational clans: Wayu, Karari, Mamboya, Hajeji, Abole, Karayu, Ilaani, and Galgedha.",
     category: "Clans"
+  },
+  {
+    id: 'q9',
+    question: "What is the singular noun for an individual member of the Ilwana Community?",
+    options: [
+      "Wailwana",
+      "Mwilwana",
+      "Kilwana",
+      "Gasa"
+    ],
+    correctIndex: 1,
+    explanation: "Mwilwana is singular (one person) while Wailwana is plural. When asked, an individual says 'I am Mwilwana', in the same Bantu linguistic structure as Mpokomo, Mkamba, or Msomali.",
+    category: "Language & Identity"
   }
 ];
 
@@ -441,12 +454,13 @@ export function answerHeritageQuery(rawQuery: string): AIAnswer {
     };
   }
 
-  // 9. NAME & IDENTITY (ILWANA VS WAILWANA) & ORIGIN
+  // 9. NAME & IDENTITY (ILWANA, WAILWANA & MWILWANA) & ORIGIN
   if (
     query.includes('name') ||
     query.includes('identity') ||
     query.includes('malakote') ||
     query.includes('wailwana') ||
+    query.includes('mwilwana') ||
     query.includes('ilwana') ||
     query.includes('kilwana') ||
     query.includes('who are') ||
@@ -454,21 +468,24 @@ export function answerHeritageQuery(rawQuery: string): AIAnswer {
     query.includes('history') ||
     query.includes('people')
   ) {
-    const idTerms = GLOSSARY_DATA.filter(e => e.id === 'ilwana' || e.id === 'wailwana' || e.id === 'kilwana');
+    const idTerms = GLOSSARY_DATA.filter(
+      (e) => e.id === 'ilwana' || e.id === 'wailwana' || e.id === 'mwilwana' || e.id === 'kilwana'
+    );
     return {
-      summary: "The correct, authentic identity is Ilwana (the heritage & community) and Wailwana (the people).",
+      summary: "The authentic identity distinction is Ilwana (the community and heritage), Wailwana (plural: the people), and Mwilwana (singular: one individual).",
       details: [
-        "Ilwana: Refers to the collective heritage, culture, and community.",
-        "Wailwana: Refers to the people themselves (singular: Mwilwana).",
+        "Ilwana: Refers to the collective heritage, culture, territory, and ethnic body.",
+        "Wailwana (Plural): Refers to the people as a collective body.",
+        "Mwilwana (Singular): Refers to a single person. When asked, an individual says 'I am Mwilwana', in the same Bantu linguistic structure as Mpokomo, Mkamba, or Msomali.",
         "Kilwana: The indigenous Bantu language spoken by the community.",
         "Historical Note: The external colonial label 'Malakote' is historically inaccurate; the community proudly preserves its genuine ancestral name Wailwana."
       ],
       relatedTerms: idTerms,
       suggestedPage: { id: 'history', title: 'History & Identity' },
       suggestedQuestions: [
+        "What is the difference between Wailwana and Mwilwana?",
         "Why is the name 'Malakote' inaccurate?",
-        "What are the 8 clans of the Wailwana?",
-        "Who is the Hayu?"
+        "What are the 8 clans of the Wailwana?"
       ]
     };
   }

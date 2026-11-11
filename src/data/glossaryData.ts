@@ -368,11 +368,12 @@ export const GLOSSARY_DATA: GlossaryEntry[] = [
   {
     id: 'kilwana',
     term: 'Kilwana',
-    englishMeaning: 'The indigenous language spoken by the Ilwana Community.',
+    englishMeaning: 'The indigenous Bantu language that the Wailwana speak.',
+    swahiliMeaning: 'Lugha ya asili inayozungumzwa na Wailwana',
     category: 'Language & Expressions',
-    culturalContext: 'A distinct Bantu language holding the oral literature, history, moral philosophies, ceremonies, and indigenous knowledge of the Wailwana.',
+    culturalContext: 'Kilwana is the distinct indigenous Bantu language that the Wailwana speak. It carries the oral literature, history, moral philosophies, ceremonies, and ancestral knowledge of the people across generations.',
     status: 'confirmed',
-    crossReferences: ['Ilwana', 'Wailwana']
+    crossReferences: ['Ilwana', 'Wailwana', 'Mwilwana']
   },
   {
     id: 'kimmule',
@@ -564,6 +565,17 @@ export const GLOSSARY_DATA: GlossaryEntry[] = [
     crossReferences: ['Lupekecho', 'Konole']
   },
   {
+    id: 'mwilwana',
+    term: 'Mwilwana',
+    singularPluralNote: 'Singular (Plural: Wailwana)',
+    englishMeaning: 'A single member of the Ilwana Community. When asked, an individual says "I am Mwilwana" (like Mpokomo, Mkamba, Msomali).',
+    swahiliMeaning: 'Mtu mmoja wa jamii ya Ilwana (kama Mpokomo, Mkamba, Msomali)',
+    category: 'Language & Expressions',
+    culturalContext: 'Mwilwana is the singular noun for an individual of the Ilwana people. When asked about personal identity, an individual says "I am Mwilwana" (plural: Wailwana), adhering to the standard Bantu noun-class morphology alongside neighboring communities such as Mpokomo, Mkamba, or Msomali.',
+    status: 'confirmed',
+    crossReferences: ['Wailwana', 'Ilwana', 'Kilwana']
+  },
+  {
     id: 'ngoma',
     term: 'Ngoma',
     englishMeaning: 'A traditional percussion drum.',
@@ -687,11 +699,13 @@ export const GLOSSARY_DATA: GlossaryEntry[] = [
   {
     id: 'wailwana',
     term: 'Wailwana',
-    englishMeaning: 'The people who belong to the Ilwana Community.',
+    singularPluralNote: 'Plural (Singular: Mwilwana)',
+    englishMeaning: 'The people who belong to the Ilwana Community (plural). An individual is Mwilwana (singular).',
+    swahiliMeaning: 'Watu wa jamii ya Ilwana (wingi; umoja: Mwilwana)',
     category: 'Language & Expressions',
-    culturalContext: 'Refers to individual members of the community (plural people designation), while Ilwana refers to the ethnic community and collective body.',
+    culturalContext: 'Wailwana is the plural designation for the people of the Ilwana Community, while Mwilwana is singular (one person). When asked about personal identity, an individual says "I am Mwilwana" (just like Mpokomo, Mkamba, or Msomali).',
     status: 'confirmed',
-    crossReferences: ['Ilwana', 'Kilwana']
+    crossReferences: ['Mwilwana', 'Ilwana', 'Kilwana']
   },
   {
     id: 'wayu',

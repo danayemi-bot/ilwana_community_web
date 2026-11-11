@@ -466,9 +466,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectGlossary
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t-2 border-stone-200">
             <div className="space-y-2 bg-[#fdfbf7] p-5 rounded-2xl border-2 border-stone-200">
               <span className="text-xs font-mono text-[#14532d] font-black tracking-wider uppercase">01 / TERMINOLOGY</span>
-              <h3 className="font-serif text-xl font-black text-stone-950">Ilwana & Wailwana</h3>
+              <h3 className="font-serif text-xl font-black text-stone-950">Ilwana, Wailwana, Mwilwana & Kilwana</h3>
               <p className="text-base text-stone-950 leading-relaxed font-normal">
-                <strong className="text-stone-950 font-black">Ilwana</strong> designates the community as an entity; <strong className="text-stone-950 font-black">Wailwana</strong> refers to the people who belong to it. The name embodies dignity and the concept of free people.
+                <strong className="text-stone-950 font-black">Ilwana</strong> designates the community and heritage. <strong className="text-stone-950 font-black">Wailwana is plural</strong> (the people), <strong className="text-stone-950 font-black">Mwilwana is singular</strong> (one person: <em className="font-bold">"I am Mwilwana"</em>, like Mpokomo, Mkamba, or Msomali), and <strong className="text-stone-950 font-black">Kilwana</strong> is the language that Wailwana speak.
               </p>
             </div>
 

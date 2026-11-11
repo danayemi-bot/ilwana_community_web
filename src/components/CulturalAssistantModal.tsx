@@ -38,6 +38,7 @@ const STRESSED_CULTURAL_TERMS = [
   'Gasa',
   "A'lima",
   'Wailwana',
+  'Mwilwana',
   'Ilwana',
   'Kilwana',
   'Chaana',
