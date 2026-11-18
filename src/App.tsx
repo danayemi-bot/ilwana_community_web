@@ -16,6 +16,7 @@ import { DocumentationPage } from './pages/DocumentationPage';
 import { ContributionsPage } from './pages/ContributionsPage';
 import { GalleryPage } from './pages/GalleryPage';
 import { CulturalAssistantModal } from './components/CulturalAssistantModal';
+import { CommunitySupportNotice } from './components/CommunitySupportNotice';
 import { ArrowUp, Sparkles } from 'lucide-react';
 
 export default function App() {
@@ -181,6 +182,13 @@ export default function App() {
           <ArrowUp className="w-5 h-5" />
         </button>
       )}
+      {/* Gentle Once-Per-Visitor Community Contributions Invitation */}
+      <CommunitySupportNotice
+        activePage={activePage}
+        showBackToTop={showBackToTop}
+        isSuppressed={searchOpen || assistantOpen}
+        onNavigate={handleNavigate}
+      />
     </div>
   );
 }

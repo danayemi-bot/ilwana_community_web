@@ -82,6 +82,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'gallery' as PageId, label: 'Gallery', icon: Camera },
     { id: 'governance' as PageId, label: 'Governance', icon: Shield },
     { id: 'glossary' as PageId, label: 'Glossary', icon: BookOpen },
+    { id: 'contribute' as PageId, label: 'Contribute', icon: Heart },
   ];
 
   return (

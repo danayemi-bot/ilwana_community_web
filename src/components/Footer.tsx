@@ -131,7 +131,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   onClick={() => onNavigate('contribute')}
                   className="hover:text-white transition-colors"
                 >
-                  Future Contributions
+                  Community Contributions
                 </button>
               </li>
             </ul>
