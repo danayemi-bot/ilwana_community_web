@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Navbar, PageId } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { SearchModal } from './components/SearchModal';
@@ -17,7 +17,10 @@ import { ContributionsPage } from './pages/ContributionsPage';
 import { GalleryPage } from './pages/GalleryPage';
 import { CulturalAssistantModal } from './components/CulturalAssistantModal';
 import { CommunitySupportNotice } from './components/CommunitySupportNotice';
+import { WelcomeSplashIntro } from './components/WelcomeSplashIntro';
 import { ArrowUp, Sparkles } from 'lucide-react';
+
+const INTRO_SESSION_KEY = 'ilwana_welcome_intro_seen_v1';
 
 export default function App() {
   const [activePage, setActivePage] = useState<PageId>('home');
@@ -25,6 +28,25 @@ export default function App() {
   const [assistantOpen, setAssistantOpen] = useState(false);
   const [selectedGlossaryTerm, setSelectedGlossaryTerm] = useState<string | undefined>(undefined);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [showIntro, setShowIntro] = useState<boolean>(() => {
+    try {
+      const hash = window.location.hash.replace('#', '');
+      const isInitialHomeEntry = !hash || hash === 'home';
+      const alreadyPlayed = sessionStorage.getItem(INTRO_SESSION_KEY) === 'true';
+      return isInitialHomeEntry && !alreadyPlayed;
+    } catch {
+      return true;
+    }
+  });
+
+  const handleIntroComplete = useCallback(() => {
+    try {
+      sessionStorage.setItem(INTRO_SESSION_KEY, 'true');
+    } catch {
+      // Ignore storage errors
+    }
+    setShowIntro(false);
+  }, []);
 
   // Sync with browser hash on load and hashchange
   useEffect(() => {
@@ -186,9 +208,12 @@ export default function App() {
       <CommunitySupportNotice
         activePage={activePage}
         showBackToTop={showBackToTop}
-        isSuppressed={searchOpen || assistantOpen}
+        isSuppressed={searchOpen || assistantOpen || showIntro}
         onNavigate={handleNavigate}
       />
+
+      {/* 9-Second Decorated Welcoming Visual Before Home Page */}
+      <WelcomeSplashIntro isOpen={showIntro} onComplete={handleIntroComplete} />
     </div>
   );
 }
